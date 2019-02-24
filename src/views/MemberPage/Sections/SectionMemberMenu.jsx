@@ -28,7 +28,7 @@ function SectionHeaders({ ...props }) {
           <List className={classes.list + " " + classes.mlAuto}>
             <ListItem className={classes.listItem}>
               <Button
-                href="#pablo"
+                href="/home"
                 className={classes.navLink}
                 onClick={e => e.preventDefault()}
                 color="transparent"

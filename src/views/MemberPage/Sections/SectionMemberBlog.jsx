@@ -13,7 +13,7 @@ import Info from "components/Typography/Info.jsx";
 
 import blogsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/blogsStyle.jsx";
 
-import cardBlog4 from "assets/img/member/sbn-hurtigruten.png";
+import hurtigrutenImage from "assets/img/member/sbn-hurtigruten.png";
 
 import SectionSolutionTag from "views/MemberPage/Sections/SectionSolutionTag.jsx";
 
@@ -31,19 +31,19 @@ function SectionMemberBlogs({ ...props }) {
                 <GridItem xs={12} sm={4} md={4}>
                   <CardHeader image plain>
                     <a href="#pablito" onClick={e => e.preventDefault()}>
-                      <img src={cardBlog4} alt="..." />
+                      <img src={hurtigrutenImage} alt="..." />
                     </a>
                     <div
                       className={classes.coloredShadow}
                       style={{
-                        backgroundImage: `url(${cardBlog4})`,
+                        backgroundImage: `url(${hurtigrutenImage})`,
                         opacity: "1"
                       }}
                     />
                     <div
                       className={classes.coloredShadow}
                       style={{
-                        backgroundImage: `url(${cardBlog4})`,
+                        backgroundImage: `url(${hurtigrutenImage})`,
                         opacity: "1"
                       }}
                     />

@@ -10,6 +10,7 @@ import PresentationPage from "views/PresentationPage/PresentationPage.jsx";
 import PricingPage from "views/PricingPage/PricingPage.jsx";
 import ProfilePage from "views/ProfilePage/ProfilePage.jsx";
 import MemberPage from "views/MemberPage/MemberPage.jsx";
+import MemberLanding from "views/MemberLanding/MemberLanding.jsx";
 import ProductPage from "views/ProductPage/ProductPage.jsx";
 import SectionsPage from "views/SectionsPage/SectionsPage.jsx";
 import ShoppingCartPage from "views/ShoppingCartPage/ShoppingCartPage.jsx";
@@ -34,8 +35,9 @@ var indexRoutes = [
     component: ShoppingCartPage
   },
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
-  { path: "/", name: "MemberPage", component: MemberPage },
-  { path: "/home", name: "PresentationPage", component: PresentationPage }
+  { path: "/member-page", name: "MemberPage", component: MemberPage },
+  { path: "/member-landing", name: "MemberLanding", component: MemberLanding },
+  { path: "/", name: "PresentationPage", component: PresentationPage }
 ];
 
 export default indexRoutes;

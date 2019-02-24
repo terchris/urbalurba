@@ -91,6 +91,34 @@ function HeaderLinks({ ...props }) {
           noLiPadding
           navDropdown
           hoverColor={dropdownHoverColor}
+          buttonText="Prototype"
+          buttonProps={{
+            className: classes.navLink,
+            color: "transparent"
+          }}
+          buttonIcon={Apps}
+          dropdownList={[
+            <Link to="/member-page" className={classes.dropdownLink}>
+              <LineStyle className={classes.dropdownIcons} /> Member Page
+            </Link>,
+            <Link to="/components" className={classes.dropdownLink}>
+              <Layers className={classes.dropdownIcons} />All components
+            </Link>,
+            <a
+              href="https://demos.creative-tim.com/material-kit-pro-react/#/documentation/tutorial"
+              target="_blank"
+              className={classes.dropdownLink}
+            >
+              <Icon className={classes.dropdownIcons}>content_paste</Icon>Documentation
+            </a>
+          ]}
+        />
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        <CustomDropdown
+          noLiPadding
+          navDropdown
+          hoverColor={dropdownHoverColor}
           buttonText="Components"
           buttonProps={{
             className: classes.navLink,
@@ -114,7 +142,8 @@ function HeaderLinks({ ...props }) {
           ]}
         />
       </ListItem>
-      <ListItem className={classes.listItem}>
+ 
+       <ListItem className={classes.listItem}>
         <CustomDropdown
           noLiPadding
           navDropdown

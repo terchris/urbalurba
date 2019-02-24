@@ -50,7 +50,8 @@ import SectionMemberHeader from "views/MemberPage/Sections/SectionMemberHeader.j
 import SectionMemberTags from "views/MemberPage/Sections/SectionMemberTags.jsx";
 import SectionMemberBlog from "views/MemberPage/Sections/SectionMemberBlog.jsx";
 import SectionMemberSolution from "views/MemberPage/Sections/SectionMemberSolution.jsx";
-
+import SectionMemberSummary from "views/MemberPage/Sections/SectionMemberSummary.jsx";
+import SectionMemberProject from "views/MemberPage/Sections/SectionMemberProject.jsx";
 import MemberFooter from "views/MemberFooter/MemberFooter.jsx";
 
 class MemberPage extends React.Component {
@@ -113,10 +114,7 @@ class MemberPage extends React.Component {
                     tabButton: "Summary",
                     tabIcon: Palette,
                     tabContent: (
-                      <div>
-                      <SectionMemberSolution />
-                      <SectionMemberBlog />                      
-                      </div>
+                      <SectionMemberSummary />
                     )
                   },
                   {
@@ -124,6 +122,13 @@ class MemberPage extends React.Component {
                     tabIcon: Palette,
                     tabContent: (
                       <SectionMemberSolution />
+                    )
+                  },
+                  {
+                    tabButton: "Projects",
+                    tabIcon: Palette,
+                    tabContent: (
+                      <SectionMemberProject />
                     )
                   },
                   {
