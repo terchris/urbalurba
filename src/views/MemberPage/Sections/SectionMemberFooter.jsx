@@ -21,7 +21,6 @@ const SectionMemberFooter = props => {
     const { classes } = props;
     return (
         <div>
-
             <div
                 className={classNames(
                     classes.subscribeLine,

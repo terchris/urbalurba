@@ -45,20 +45,23 @@ import sectionTextStyle from "assets/jss/material-kit-pro-react/views/blogPostSe
 import SDGGrid from "views/SDGGrid/SDGGrid.jsx";
 import SDGRow from "views/SDGRow/SDGRow.jsx";
 import SectionMemberTeam from "views/MemberPage/Sections/SectionMemberTeam.jsx";
-import SectionMemberFooter from "views/MemberPage/Sections/SectionMemberFooter.jsx";
+
 import SectionMemberHeader from "views/MemberPage/Sections/SectionMemberHeader.jsx";
 import SectionMemberTags from "views/MemberPage/Sections/SectionMemberTags.jsx";
 import SectionMemberBlog from "views/MemberPage/Sections/SectionMemberBlog.jsx";
 import SectionMemberSolution from "views/MemberPage/Sections/SectionMemberSolution.jsx";
 import SectionMemberSummary from "views/MemberPage/Sections/SectionMemberSummary.jsx";
 import SectionMemberProject from "views/MemberPage/Sections/SectionMemberProject.jsx";
-import MemberFooter from "views/MemberFooter/MemberFooter.jsx";
+import MemberFooter from "views/SharedSection/MemberFooter.jsx";
 import CustomInput from "components/CustomInput/CustomInput.jsx";
 import office2 from "assets/img/examples/office2.jpg";
-import SectionMemberMenu from "views/MemberPage/Sections/SectionMemberMenu.jsx";
-import MemberTypeSum from "views/MemberTypeSum/MemberTypeSum.jsx";
+
+import MemberTopMenu from "views/SharedSection/MemberTopMenu.jsx";
+import MemberSearch from "views/SharedSection/MemberSearch.jsx";
+import MemberTop from "views/SharedSection/MemberTop.jsx";
+import MemberTypeSum from "views/SharedSection/MemberTypeSum.jsx";
 import headersStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/headersStyle.jsx";
-import MemberGrid from "views/MemberGrid/MemberGrid.jsx";
+import MemberGrid from "views/SharedSection/MemberGrid.jsx";
 
 
 
@@ -78,70 +81,17 @@ class MemberLanding extends React.Component {
         return (
 
             <div>
-                <SectionMemberMenu />
-                <div
-                    className={classes.pageHeader}
-                    style={{ backgroundImage: `url("${office2}")` }}
-                >
+                <MemberTop />
 
-                    <div className={classes.conatinerHeader2}>
-                        <GridContainer>
-                            <GridItem
-                                xs={12}
-                                sm={8}
-                                md={8}
-                                className={classNames(
-                                    classes.mlAuto,
-                                    classes.mrAuto,
-                                    classes.textCenter
-                                )}
-                            >
-                                <h1 className={classes.title}>Smartbykatalogen</h1>
-                                <h4>
-                                    Hvem gjør hva i det norske smartbymarkedet.
-              </h4>
-                            </GridItem>
-                            <GridItem
-                                xs={12}
-                                sm={10}
-                                md={10}
-                                className={classNames(classes.mlAuto, classes.mrAuto)}
-                            >
-                                <Card raised className={classes.card}>
-                                    <CardBody formHorizontal>
-                                        <form>
-                                            <GridContainer>
-                                                <GridItem xs={8} sm={8} md={8}>
-                                                    <CustomInput
-                                                        id="searchtext"
-                                                        inputProps={{
-                                                            placeholder: "Search text"
-                                                        }}
-                                                        formControlProps={{
-                                                            fullWidth: true,
-                                                            className: classes.formControl
-                                                        }}
-                                                    />
-                                                </GridItem>
-                                                <GridItem xs={12} sm={3} md={3}>
-                                                    <Button
-                                                        block
-                                                        color="primary"
-                                                        className={classes.button}
-                                                    >
-                                                        Søk
-                        </Button>
-                                                </GridItem>
-                                            </GridContainer>
-                                        </form>
-                                    </CardBody>
-                                </Card>
-                            </GridItem>
-                        </GridContainer>
+                <div className={classNames(classes.main, classes.mainRaised)}>
+                    <div className={classes.container}>
+                        <MemberSearch />
+
+
+                        <MemberGrid />
+                        <Clearfix />
                     </div>
                 </div>
-                <MemberTypeSum />
-                <MemberGrid />
                 <MemberFooter />
             </div>
 

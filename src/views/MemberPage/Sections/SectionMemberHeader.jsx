@@ -13,13 +13,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import memberHeaderStyle from "assets/jss/material-kit-pro-react/views/memberHeaderStyle.jsx";
 
 import backgroundImage from "assets/img/examples/city.jpg";
-import SectionMemberMenu from "views/MemberPage/Sections/SectionMemberMenu.jsx";
+import MemberTopMenu from "views/SharedSection/MemberTopMenu.jsx";
 
 const SectionHeaders = props => {
   const { classes } = props;
   return (
     <div>
-      <SectionMemberMenu />
+      <MemberTopMenu />
       <div
         className={classes.pageHeader}
         style={{ backgroundImage: `url("${backgroundImage}")` }}

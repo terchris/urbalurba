@@ -15,13 +15,13 @@ import Button from "components/CustomButtons/Button.jsx";
 
 import headersStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/headersStyle.jsx";
 
-function SectionHeaders({ ...props }) {
+function MemberTopMenu({ ...props }) {
   const { classes } = props;
 
   return (
     <Header
       absolute
-      brand="Urbalurba"
+      brand="Smartbykatalogen"
       color="transparent"
       links={
         <div className={classes.collapse}>
@@ -43,7 +43,7 @@ function SectionHeaders({ ...props }) {
                 onClick={e => e.preventDefault()}
                 color="transparent"
               >
-                About us
+                Om oss
               </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
@@ -105,4 +105,4 @@ function SectionHeaders({ ...props }) {
   );
 }
 
-export default withStyles(headersStyle)(SectionHeaders);
+export default withStyles(headersStyle)(MemberTopMenu);

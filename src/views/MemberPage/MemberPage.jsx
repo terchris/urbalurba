@@ -45,14 +45,15 @@ import sectionTextStyle from "assets/jss/material-kit-pro-react/views/blogPostSe
 import SDGGrid from "views/SDGGrid/SDGGrid.jsx";
 import SDGRow from "views/SDGRow/SDGRow.jsx";
 import SectionMemberTeam from "views/MemberPage/Sections/SectionMemberTeam.jsx";
-import SectionMemberFooter from "views/MemberPage/Sections/SectionMemberFooter.jsx";
+
 import SectionMemberHeader from "views/MemberPage/Sections/SectionMemberHeader.jsx";
 import SectionMemberTags from "views/MemberPage/Sections/SectionMemberTags.jsx";
 import SectionMemberBlog from "views/MemberPage/Sections/SectionMemberBlog.jsx";
 import SectionMemberSolution from "views/MemberPage/Sections/SectionMemberSolution.jsx";
 import SectionMemberSummary from "views/MemberPage/Sections/SectionMemberSummary.jsx";
 import SectionMemberProject from "views/MemberPage/Sections/SectionMemberProject.jsx";
-import MemberFooter from "views/MemberFooter/MemberFooter.jsx";
+import MemberFooter from "views/SharedSection/MemberFooter.jsx";
+import SectionMemberFooter from "views/MemberPage/Sections/SectionMemberFooter.jsx";
 
 class MemberPage extends React.Component {
   componentDidMount() {
@@ -151,13 +152,13 @@ class MemberPage extends React.Component {
 
 
             <SectionMemberTeam />
-            <SectionMemberFooter />
+            <SectionMemberFooter />        
             <Clearfix />
           </div>
-        </div>
-
+        </div> 
         <MemberFooter />
       </div>
+      
     );
   }
 }
