@@ -81,7 +81,7 @@ class MemberPage extends React.Component {
                   </div>
                   <div className={classes.name}>
                     <h1 className={classes.title}>Acando</h1>
-                    <h3>Digitalt konsulentselskap</h3>
+                    <h3>Digitalt  something konsulentselskap</h3>
                   </div>
 
                 </div>
