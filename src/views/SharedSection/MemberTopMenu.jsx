@@ -21,7 +21,7 @@ function MemberTopMenu({ ...props }) {
   return (
     <Header
       absolute
-      brand="Smartbykatalogen"
+      brand="SmartByKatalogen!"
       color="transparent"
       links={
         <div className={classes.collapse}>
