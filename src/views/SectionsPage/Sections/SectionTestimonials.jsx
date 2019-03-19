@@ -157,9 +157,10 @@ function SectionTestimonials({ ...props }) {
                         "I speak yell scream directly at the old guard on behalf
                         of the future. I gotta say at that time I’d like to meet
                         Kanye I speak yell scream directly at the old guard on
-                        behalf of the future. My brother Chance!!!<br />Thank
-                        you for letting me work on this masterpiece. One of my
-                        favorite people."
+                        behalf of the future. My brother Chance!!!
+                        <br />
+                        Thank you for letting me work on this masterpiece. One
+                        of my favorite people."
                       </h5>
                       <h4 className={classes.cardTitle}>Kendall Thompson</h4>
                       <Muted>

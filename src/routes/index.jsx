@@ -9,12 +9,13 @@ import LoginPage from "views/LoginPage/LoginPage.jsx";
 import PresentationPage from "views/PresentationPage/PresentationPage.jsx";
 import PricingPage from "views/PricingPage/PricingPage.jsx";
 import ProfilePage from "views/ProfilePage/ProfilePage.jsx";
-import MemberPage from "views/MemberPage/MemberPage.jsx";
-import MemberLandingPage from "views/MemberLandingPage/MemberLandingPage.jsx";
 import ProductPage from "views/ProductPage/ProductPage.jsx";
 import SectionsPage from "views/SectionsPage/SectionsPage.jsx";
 import ShoppingCartPage from "views/ShoppingCartPage/ShoppingCartPage.jsx";
 import SignupPage from "views/SignupPage/SignupPage.jsx";
+import MainPage from "views/Feilmeld/MainPage/MainPage.jsx";
+import MemberProfilePage from "views/Member/MemberProfilePage/MemberProfilePage.jsx";
+import MemberLandingPage from "views/Member/MemberLandingPage/MemberLandingPage.jsx";
 
 var indexRoutes = [
   { path: "/about-us", name: "AboutUsPage", component: AboutUsPage },
@@ -35,10 +36,10 @@ var indexRoutes = [
     component: ShoppingCartPage
   },
   { path: "/signup-page", name: "SignupPage", component: SignupPage },
-  { path: "/member-page", name: "MemberPage", component: MemberPage },
-  { path: "/member-landing", name: "MemberLandingPage", component: MemberLandingPage },
+  { path: "/feilmeld", name: "FeilmeldPage", component: MainPage },
+  { path: "/member-profile", name: "MemberProfilePage", component: MemberProfilePage },
+  { path: "/member-landing", name: "MemberLandingPage", component: MemberLandingPage },  
   { path: "/", name: "PresentationPage", component: PresentationPage }
 ];
-
 
 export default indexRoutes;

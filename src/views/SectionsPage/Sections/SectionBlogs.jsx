@@ -92,7 +92,8 @@ function SectionBlogs({ ...props }) {
                   <GridItem xs={12} sm={7} md={7}>
                     <Danger>
                       <h6 className={classes.cardCategory}>
-                        <TrendingUp />TRENDING
+                        <TrendingUp />
+                        TRENDING
                       </h6>
                     </Danger>
                     <h3 className={classes.cardTitle}>
@@ -241,7 +242,8 @@ function SectionBlogs({ ...props }) {
                     <CardBody plain>
                       <Danger>
                         <h6 className={classes.cardCategory}>
-                          <TrendingUp />ENTERPRISE
+                          <TrendingUp />
+                          ENTERPRISE
                         </h6>
                       </Danger>
                       <h4 className={classes.cardTitle}>
@@ -359,7 +361,8 @@ function SectionBlogs({ ...props }) {
                   <GridItem xs={12} sm={8} md={8}>
                     <Danger>
                       <h6 className={classes.cardCategory}>
-                        <TrendingUp />TRENDING
+                        <TrendingUp />
+                        TRENDING
                       </h6>
                     </Danger>
                     <h3 className={classes.cardTitle}>

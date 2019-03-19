@@ -133,7 +133,8 @@ class SectionJavascript extends React.Component {
                     round
                     onClick={() => this.handleClickOpen("classicModal")}
                   >
-                    <LibraryBooks />Classic
+                    <LibraryBooks />
+                    Classic
                   </Button>
                   <Dialog
                     classes={{
@@ -247,7 +248,8 @@ class SectionJavascript extends React.Component {
                             The first step is to create an account at{" "}
                             <a href="https://www.creative-tim.com/">
                               Creative Tim
-                            </a>. You can choose a social network or go for the
+                            </a>
+                            . You can choose a social network or go for the
                             classic version, whatever works best for you.
                           </span>
                         }
@@ -262,7 +264,8 @@ class SectionJavascript extends React.Component {
                             The first step is to create an account at{" "}
                             <a href="https://www.creative-tim.com/">
                               Creative Tim
-                            </a>. You can choose a social network or go for the
+                            </a>
+                            . You can choose a social network or go for the
                             classic version, whatever works best for you.
                           </span>
                         }

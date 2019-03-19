@@ -68,8 +68,7 @@ function SectionText({ ...props }) {
             there’s so many Kanyes I've been trying to figure out the bed design
             for the master bedroom at our Hidden Hills compound... and thank you
             for turning my personal jean jacket into a couture piece.
-            <br />
-            I speak yell scream directly at the old guard on behalf of the
+            <br />I speak yell scream directly at the old guard on behalf of the
             future. daytime All respect prayers and love to Phife’s family Thank
             you for so much inspiration.
           </p>

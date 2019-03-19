@@ -127,7 +127,8 @@ class SectionCards extends React.Component {
                     <Card color="info">
                       <CardBody color>
                         <h5 className={classes.cardCategorySocialWhite}>
-                          <i className="fab fa-twitter" />Twitter
+                          <i className="fab fa-twitter" />
+                          Twitter
                         </h5>
                         <h4 className={classes.cardTitleWhite}>
                           <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -240,8 +241,7 @@ class SectionCards extends React.Component {
                           </a>
                         </div>
                         <div className={`${classes.stats} ${classes.mlAuto}`}>
-                          <Schedule />
-                          5 min read
+                          <Schedule />5 min read
                         </div>
                       </CardFooter>
                     </Card>
@@ -287,15 +287,15 @@ class SectionCards extends React.Component {
                           </a>
                         </div>
                         <div className={`${classes.stats} ${classes.mlAuto}`}>
-                          <Schedule />
-                          5 min read
+                          <Schedule />5 min read
                         </div>
                       </CardFooter>
                     </Card>
                     <Card color="success">
                       <CardBody color>
                         <h5 className={classes.cardCategorySocialWhite}>
-                          <i className="far fa-newspaper" />TechCrunch
+                          <i className="far fa-newspaper" />
+                          TechCrunch
                         </h5>
                         <h4 className={classes.cardTitleWhite}>
                           <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -728,7 +728,8 @@ class SectionCards extends React.Component {
                         <CardBody className={classes.cardBodyRotate}>
                           <Success>
                             <h5 className={classes.cardCategorySocial}>
-                              <i className="far fa-newspaper" />TechCrunch
+                              <i className="far fa-newspaper" />
+                              TechCrunch
                             </h5>
                           </Success>
                           <h4 className={classes.cardTitle}>
@@ -1232,7 +1233,8 @@ class SectionCards extends React.Component {
                   <Card color="info">
                     <CardBody color>
                       <h5 className={classes.cardCategorySocialWhite}>
-                        <i className="fab fa-twitter" />Twitter
+                        <i className="fab fa-twitter" />
+                        Twitter
                       </h5>
                       <h4 className={classes.cardTitleWhite}>
                         <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -1305,8 +1307,7 @@ class SectionCards extends React.Component {
                         </a>
                       </div>
                       <div className={`${classes.stats} ${classes.mlAuto}`}>
-                        <Schedule />
-                        5 min read
+                        <Schedule />5 min read
                       </div>
                     </CardFooter>
                   </Card>
@@ -1349,8 +1350,7 @@ class SectionCards extends React.Component {
                         </a>
                       </div>
                       <div className={`${classes.stats} ${classes.mlAuto}`}>
-                        <Schedule />
-                        5 min read
+                        <Schedule />5 min read
                       </div>
                     </CardFooter>
                   </Card>

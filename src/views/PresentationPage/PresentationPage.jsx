@@ -54,9 +54,8 @@ class PresentationPage extends React.Component {
               <GridItem>
                 <div className={classes.brand}>
                   <h1>
-                    Material Kit React<span className={classes.proBadge}>
-                      PRO
-                    </span>
+                    Material Kit React
+                    <span className={classes.proBadge}>PRO</span>
                   </h1>
                   <h3 className={classes.title}>
                     A Badass Material-UI Kit based on Material Design.

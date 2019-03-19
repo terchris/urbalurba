@@ -95,20 +95,12 @@ class SectionNavbars extends React.Component {
                 links={
                   <List className={classes.list + " " + classes.mlAuto}>
                     <ListItem className={classes.listItem}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.navLink}
-                      >
+                      <Button color="transparent" className={classes.navLink}>
                         <Email />
                       </Button>
                     </ListItem>
                     <ListItem className={classes.listItem}>
-                      <Button
-                        justIcon
-                        color="transparent"
-                        className={classes.navLink}
-                      >
+                      <Button color="transparent" className={classes.navLink}>
                         <Face />
                       </Button>
                     </ListItem>
@@ -382,12 +374,7 @@ class SectionNavbars extends React.Component {
               links={
                 <List className={classes.list + " " + classes.mlAuto}>
                   <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
+                    <Button color="transparent" className={classes.navLink}>
                       <i
                         className={
                           classes.socialIcons +
@@ -400,12 +387,7 @@ class SectionNavbars extends React.Component {
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
+                    <Button color="transparent" className={classes.navLink}>
                       <i
                         className={
                           classes.socialIcons +
@@ -418,12 +400,7 @@ class SectionNavbars extends React.Component {
                     </Button>
                   </ListItem>
                   <ListItem className={classes.listItem}>
-                    <Button
-                      color="transparent"
-                      className={
-                        classes.navLink + " " + classes.socialIconsButton
-                      }
-                    >
+                    <Button color="transparent" className={classes.navLink}>
                       <i
                         className={
                           classes.socialIcons +

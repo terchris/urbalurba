@@ -36,7 +36,7 @@ function SectionTeam(props) {
           <h2 className={classes.title}>We are nerd rockstars</h2>
           <h5 className={classes.description}>
             This is the paragraph where you can write more details about your
-            team. Keep you user engaged by providing meaningful information!
+            team. Keep you user engaged by providing meaningful information.
           </h5>
         </GridItem>
       </GridContainer>

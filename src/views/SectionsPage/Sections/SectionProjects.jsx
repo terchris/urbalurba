@@ -111,7 +111,8 @@ function SectionProjects({ ...props }) {
                     Kanye I love Rick Owens’ bed design but the back is...
                   </p>
                   <Button round color="info">
-                    <Build />View Project
+                    <Build />
+                    View Project
                   </Button>
                 </CardBody>
               </Card>

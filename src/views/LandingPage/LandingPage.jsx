@@ -23,8 +23,6 @@ import SectionProduct from "./Sections/SectionProduct.jsx";
 import SectionTeam from "./Sections/SectionTeam.jsx";
 import SectionWork from "./Sections/SectionWork.jsx";
 
-const dashboardRoutes = [];
-
 class LandingPage extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -36,7 +34,6 @@ class LandingPage extends React.Component {
       <div>
         <Header
           color="transparent"
-          routes={dashboardRoutes}
           brand="Material Kit PRO React"
           links={<HeaderLinks dropdownHoverColor="info" />}
           fixed
@@ -65,7 +62,8 @@ class LandingPage extends React.Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fas fa-play" />Watch video
+                  <i className="fas fa-play" />
+                  Watch video
                 </Button>
               </GridItem>
             </GridContainer>

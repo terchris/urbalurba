@@ -1,14 +1,18 @@
 import {
   container,
   description,
-  cardTitle
+  cardTitle,
+  blackColor,
+  whiteColor,
+  grayColor,
+  hexToRgb
 } from "assets/jss/material-kit-pro-react.jsx";
 
 const signupPageStyle = theme => ({
   description,
   cardTitle: {
     ...cardTitle,
-    color: "#FFFFFF !important"
+    color: whiteColor + "  !important"
   },
   container: {
     ...container,
@@ -18,7 +22,7 @@ const signupPageStyle = theme => ({
     }
   },
   pageHeader: {
-    color: "#fff",
+    color: whiteColor,
     border: "0",
     height: "100%",
     margin: "0",
@@ -28,7 +32,7 @@ const signupPageStyle = theme => ({
     minHeight: "100vh",
     alignItems: "center",
     "&:before": {
-      background: "rgba(0, 0, 0, 0.5)"
+      background: "rgba(" + hexToRgb(blackColor) + ", 0.5)"
     },
     "&:before,&:after": {
       position: "absolute",
@@ -54,7 +58,7 @@ const signupPageStyle = theme => ({
     padding: "0"
   },
   inputIconsColor: {
-    color: "#495057"
+    color: grayColor[13]
   },
   textCenter: {
     textAlign: "center"
@@ -88,7 +92,7 @@ const signupPageStyle = theme => ({
     float: "left!important",
     display: "block",
     "&,& *,& *:hover,& *:focus": {
-      color: "#FFFFFF !important"
+      color: whiteColor + "  !important"
     }
   },
   right: {
@@ -96,7 +100,7 @@ const signupPageStyle = theme => ({
     margin: "0",
     float: "right",
     "&,& *,& *:hover,& *:focus": {
-      color: "#FFFFFF !important"
+      color: whiteColor + "  !important"
     }
   },
   icon: {
@@ -110,7 +114,7 @@ const signupPageStyle = theme => ({
     width: "100%",
     background: "transparent",
     bottom: "0",
-    color: "#fff",
+    color: whiteColor,
     zIndex: "2"
   }
 });
