@@ -9,6 +9,7 @@
   "dependencies": {
     "@material-ui/core": "3.9.2",
     "@material-ui/icons": "3.0.2",
+    "contentful": "^6.1.1",
     "@types/googlemaps": "3.30.16",
     "@types/markerclustererplus": "2.1.33",
     "ajv": "6.9.1",

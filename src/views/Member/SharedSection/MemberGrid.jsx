@@ -12,6 +12,19 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
 
+//icontentful
+import * as contentful from 'contentful'
+
+
+const SPACE_ID = 'yynhhoh159d4'
+const ACCESS_TOKEN = '0eff50d6ae3fde62f9d4052b2ebb81eeea4c632c15f35eff0d05de63bc3f4fb0'
+
+const client = contentful.createClient({
+    space: SPACE_ID,
+    accessToken: ACCESS_TOKEN
+})
+
+
 const globalMembers = [
   {
     "package_count": 0,
@@ -276,6 +289,43 @@ const globalMembers = [
 
 
 class MemberGrid extends React.Component {
+
+
+  constructor() {
+    super()
+    this.state = {
+        members: [],
+        searchString: ''
+    }
+  }
+
+  componentDidMount()
+    {
+        this.getMembers();
+    }
+
+    
+getMembers = () => {
+        client.getEntries({
+            content_type: 'organization',
+            query: this.state.searchString
+        })
+        .then((response) => {
+          console.log("Before something")
+            this.setState({members: response.items })
+
+            console.log("EWe have something")
+
+            console.log(this.state.members)
+        })
+        .catch((error) => {
+            console.log("Error occured while fetching data")
+            console.log(error)
+        })
+    }
+
+
+
   render() {
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(
@@ -293,8 +343,8 @@ class MemberGrid extends React.Component {
               <h3>Member search</h3>
             </div>
             <GridContainer>
-              {globalMembers.map(CurrentMember => (
-                <MemberCard member={CurrentMember} />
+              {this.state.members.map(CurrentMember => (
+                <MemberCard  members={CurrentMember} />
               ))}
             </GridContainer>
           </div>
@@ -305,4 +355,3 @@ class MemberGrid extends React.Component {
 }
 
 export default withStyles(memberPageStyle)(MemberGrid);
-
