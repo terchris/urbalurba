@@ -11,20 +11,20 @@ import Palette from "@material-ui/icons/Palette";
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
-import NavPills from "components/NavPills/NavPills.jsx";
+//import NavPills from "components/NavPills/NavPills.jsx";
 import Clearfix from "components/Clearfix/Clearfix.jsx";
 
 
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
-import SDGGrid from "../SharedSection/SDGGrid";
-import MemberFooter from "../SharedSection/MemberFooter.jsx";
+//import SDGGrid from "../SharedSection/SDGGrid";
+//import MemberFooter from "../SharedSection/MemberFooter.jsx";
 
 import MemberTeamSection from "./Sections/MemberTeamSection.jsx";
 import MemberHeaderSection from "./Sections/MemberHeaderSection.jsx";
-import MemberTagsSection from "./Sections/MemberTagsSection.jsx";
+//import MemberTagsSection from "./Sections/MemberTagsSection.jsx";
 import MemberBlogSection from "./Sections/MemberBlogSection.jsx";
-import MemberSolutionSection from "./Sections/MemberSolutionSection.jsx";
+//import MemberSolutionSection from "./Sections/MemberSolutionSection.jsx";
 import MemberSummarySection from "./Sections/MemberSummarySection.jsx";
 import MemberProjectSection from "./Sections/MemberProjectSection.jsx";
 import MemberFooterSection from "./Sections/MemberFooterSection.jsx";
@@ -44,6 +44,7 @@ class MemberProfilePage extends React.Component {
     );
 
     const { member } = this.props.location.state;
+    //.const { member } = this.props;//location.state;
     
     return (
       <div>
@@ -55,11 +56,11 @@ class MemberProfilePage extends React.Component {
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.memberLogo}>
                   <div>
-                    <img src={member.image_display_url} alt="logo" className={imageClasses} />
+                   
                     
                   </div>
                   <div className={classes.name}>
-                    <h1 className={classes.title}>{member.title}</h1>
+                    <h1 className={classes.title}>{member.displayName}</h1>
                     <h3>{member.slogan}</h3>
                   </div>
 
@@ -71,71 +72,18 @@ class MemberProfilePage extends React.Component {
               <GridItem xs={12} sm={12} md={10}>
                 <div className={classNames(classes.section)}>
                   <p>
-                    {member.description}
+                    {member.fields.summary}
                   </p>
                 </div>
 
-                <SDGGrid sdg={member.sustainable_development_goals}/>
-
-              </GridItem>
-
-              <GridItem xs={12} sm={12} md={2}>
-
-                <MemberTagsSection member={member}/>
+                
 
               </GridItem>
             </GridContainer>
-
-            <NavPills
-                alignCenter
-                color="primary"
-                tabs={[
-                  {
-                    tabButton: "Summary",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberSummarySection />
-                    )
-                  },
-                  {
-                    tabButton: "Solutions",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberSolutionSection />
-                    )
-                  },
-                  {
-                    tabButton: "Projects",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberProjectSection />
-                    )
-                  },
-                  {
-                    tabButton: "Publications",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberBlogSection />
-                    )
-                  },
-                  {
-                    tabButton: "Datasets",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberBlogSection />
-                    )
-                  }
-                ]}
-              />                  
-
-
-
-            <MemberTeamSection />
-            <MemberFooterSection member={member} />        
+                   
             <Clearfix />
           </div>
         </div> 
-        <MemberFooter />
       </div>
       
     );

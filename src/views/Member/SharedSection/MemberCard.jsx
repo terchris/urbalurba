@@ -51,7 +51,7 @@ class MemberCard extends React.Component {
         <Card profile>
           <CardHeader image>
             <a href="#pablo" onClick={e => e.preventDefault()}>
-              <img src={members.fields.imageMedium.fields.file.url} alt="logo" />
+              
               <div className={classes.cardTitleAbsolute}>
                 {members.fields.displayName}
               </div>
@@ -59,7 +59,7 @@ class MemberCard extends React.Component {
             <div
               className={classes.coloredShadow}
               style={{
-                backgroundImage: `url(${members.fields.imageMedium.fields.file.url})`,
+                
                 opacity: "1"
               }}
             />
@@ -74,7 +74,7 @@ class MemberCard extends React.Component {
             <Link to={{
               pathname:"/member-profile",
               state: {
-                member: members
+                member: this.props.members
               }
               }}>
                   <Button
