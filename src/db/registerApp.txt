@@ -1,0 +1,23 @@
+Copy and paste these scripts into the bottom of your <body> tag, but before you use any Firebase services:
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/5.11.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAxd0v4vx_JUh1N7q9z96ceq6wPoLFrCGk",
+    authDomain: "urbalurbacore.firebaseapp.com",
+    databaseURL: "https://urbalurbacore.firebaseio.com",
+    projectId: "urbalurbacore",
+    storageBucket: "urbalurbacore.appspot.com",
+    messagingSenderId: "546821540083",
+    appId: "1:546821540083:web:34fce5ef8e6fa569"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
