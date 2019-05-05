@@ -17,6 +17,39 @@
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:3000/member-landing",
             "webRoot": "${workspaceFolder}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "listCategories",
+            "program": "${workspaceFolder}/src/member/catalog_listCategories.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "addCategories",
+            "program": "${workspaceFolder}/src/member/catalog_addCategories.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "listOrganisations",
+            "program": "${workspaceFolder}/src/member/catalog_listOrganisations.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "addOrganisations",
+            "program": "${workspaceFolder}/src/member/catalog_addOrganisations.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "searchOrganisations",
+            "program": "${workspaceFolder}/src/member/catalog_searchOrganisations.js"
         }
+
     ]
 }
+
+
