@@ -11,6 +11,10 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
+import {compose} from "redux";
+import { connect } from 'react-redux'
+import { getMembers } from '../../../redux/actions/memberActions'
+
 
 //icontentful
 import * as contentful from 'contentful'
@@ -38,6 +42,7 @@ class MemberGrid extends React.Component {
     super()
     this.state = {
         members: [],
+        member: ["",""],
         searchString: ''
     }
   }
@@ -52,13 +57,22 @@ class MemberGrid extends React.Component {
 
 getMembersFirebase = () => {
   const db = fire.firestore();
+  const memArr=[];
   
   db.collection('catalog_organisation').get()
   .then((snapshot) => {       
     snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', JSON.stringify( doc.data()) );
+      console.log( doc.data() );
+      memArr.push(doc.data())
       // Ebe. Here is the data. How to get it into the right structure I leave to you
+    
     });
+    // console.log("lets see")
+    //     console.log(snapshot)
+    this.setState({
+      members:memArr
+    })
+    this.props.getMembers(memArr);
   })
   .catch((err) => {
     console.log('Error getting documents', err);
@@ -109,7 +123,8 @@ getMembers = () => {
             </div>
             <GridContainer>
               {this.state.members.map(CurrentMember => (
-                <MemberCard  members={CurrentMember} />
+               <MemberCard  members={CurrentMember} /> 
+
               ))}
             </GridContainer>
           </div>
@@ -118,5 +133,21 @@ getMembers = () => {
     );
   }
 }
+const mapDispatchToProps = dispatch => {
+  return {
+    getMembers: (member) => dispatch(getMembers(member))
+  }
+}
 
-export default withStyles(memberPageStyle)(MemberGrid);
+const mapStateToProps = (state, ownProps) => {
+  
+  console.log("lets see");
+   console.log(state);
+  return {
+  }
+}
+
+export default compose(
+  withStyles(memberPageStyle),
+  connect(mapStateToProps,mapDispatchToProps),
+)(MemberGrid);

@@ -25,11 +25,18 @@ import ErrorPage from "views/ErrorPage/ErrorPage.jsx";
 import MainPage from "views/Feilmeld/MainPage/MainPage.jsx";
 import MemberProfilePage from "views/Member/MemberProfilePage/MemberProfilePage.jsx";
 import MemberLandingPage from "views/Member/MemberLandingPage/MemberLandingPage.jsx";
-
+import { Provider } from 'react-redux'
+import { createStore, } from 'redux'
+import rootReducer from "./redux/reducers/rootReducer"
 var hist = createBrowserHistory();
 
+
+
+const store = createStore(rootReducer); 
+
 ReactDOM.render(
-  <Router history={hist}>
+  <Provider store={store}>
+<Router history={hist}>
     <Switch>
       <Route path="/about-us" component={AboutUsPage} />
       <Route path="/blog-post" component={BlogPostPage} />
@@ -51,6 +58,8 @@ ReactDOM.render(
       <Route path="/member-landing" component={MemberLandingPage} />
       <Route path="/" component={PresentationPage} />
     </Switch>
-  </Router>,
+  </Router>
+  </Provider>
+  ,
   document.getElementById("root")
 );
