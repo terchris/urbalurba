@@ -4,6 +4,7 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
         {
             "type": "chrome",
             "request": "attach",
@@ -33,20 +34,20 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "listOrganisations",
-            "program": "${workspaceFolder}/src/member/catalog_listOrganisations.js"
+            "name": "listOrganizations",
+            "program": "${workspaceFolder}/src/member/catalog_listOrganizations.js"
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "addOrganisations",
-            "program": "${workspaceFolder}/src/member/catalog_addOrganisations.js"
+            "name": "addOrganizations",
+            "program": "${workspaceFolder}/src/member/catalog_addOrganizations.js"
         },
         {
             "type": "node",
             "request": "launch",
-            "name": "searchOrganisations",
-            "program": "${workspaceFolder}/src/member/catalog_searchOrganisations.js"
+            "name": "searchOrganizations",
+            "program": "${workspaceFolder}/src/member/catalog_searchOrganizations.js"
         },
         {
             "type": "node",
