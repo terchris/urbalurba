@@ -47,7 +47,13 @@
             "request": "launch",
             "name": "searchOrganisations",
             "program": "${workspaceFolder}/src/member/catalog_searchOrganisations.js"
-        }
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "addNetworks",
+            "program": "${workspaceFolder}/src/member/catalog_addNetworks.js"
+        },
 
     ]
 }
