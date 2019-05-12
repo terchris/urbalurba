@@ -4,7 +4,8 @@
     "categories": {
         "SDG": ["1", "2"],
         "segment": ["mobility", "energy"],
-        "BREAM": ["ledelse", "energibruk"]
+        "BREAM": ["ledelse", "energibruk"],
+        "organizationType": ["private"]
 
     },
     "contacts": [{

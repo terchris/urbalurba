@@ -1,4 +1,4 @@
-/** node program for listing organisations
+/** node program for listing organizations
  * Its for use on a local node server on your machine.
  * so to have access to the server you need to put a key in /private folder (gitignore)
  * To get a key see section Initialize on your own server on https://firebase.google.com/docs/firestore/quickstart 

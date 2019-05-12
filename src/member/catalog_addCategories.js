@@ -20,6 +20,7 @@ admin.initializeApp({
 var db = admin.firestore();
 var categoryRef = db.collection("catalog_category");
 
+
 categoryRef.doc().set(
     {
         "displayName": "Sustainable Development Goals",
@@ -79,7 +80,8 @@ categoryRef.doc().set(
             }
         ],
         "summary": "FNs bærekraftsmål er verdens felles arbeidsplan for å utrydde fattigdom, bekjempe ulikhet og stoppe klimaendringene innen 2030",
-        "idName": "SDG"
+        "idName": "SDG",
+        "choice": "multiple"
     }
 );
 
@@ -144,64 +146,10 @@ categoryRef.doc().set(
             }
         ],
         "summary": "The different segments that adressed",
-        "idName": "segment"
-    }
+        "idName": "segment",
+        "choice": "multiple"
+    }    
 );
-
-
-
-
-categoryRef.doc().set(
-    {
-        "displayName": "BREAM-NOR",
-        "image": {
-            "large": "",
-            "medium": "",
-            "small": ""
-        },
-        "categoryItems": [
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 1,
-                "summary": "Ledelse og administrasjon",
-                "idName": "ledelse",
-                "displayName": "Ledelse og administrasjon",
-                "article": "Ledelse og administrasjon"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 2,
-                "summary": "Helse og innemiljø",
-                "idName": "helse",
-                "displayName": "Helse og innemiljø",
-                "article": "Helse og innemiljø"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 3,
-                "summary": "Energibruk",
-                "idName": "energibruk",
-                "displayName": "Energibruk",
-                "article": "Energibruk"
-            }
-        ],
-        "summary": "Miljøsertifisering for alle typer bygg.",
-        "idName": "BREAM"
-    }
-);
-
 
 
 
@@ -252,7 +200,164 @@ categoryRef.doc().set(
             }
         ],
         "summary": "Defines set of challenges ",
-        "idName": "challenges"
+        "idName": "challenges",
+        "choice": "multiple"
     }
-);
+    );
+    
 
+
+
+categoryRef.doc().set(
+    {
+        "displayName": "BREAM-NOR",
+        "image": {
+            "large": "",
+            "medium": "",
+            "small": ""
+        },
+        "categoryItems": [
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 1,
+                "summary": "Ledelse og administrasjon",
+                "idName": "ledelse",
+                "displayName": "Ledelse og administrasjon",
+                "article": "Ledelse og administrasjon"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 2,
+                "summary": "Helse og innemiljø",
+                "idName": "helse",
+                "displayName": "Helse og innemiljø",
+                "article": "Helse og innemiljø"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 3,
+                "summary": "Energibruk",
+                "idName": "energibruk",
+                "displayName": "Energibruk",
+                "article": "Energibruk"
+            }
+        ],
+        "summary": "Miljøsertifisering for alle typer bygg.",
+        "idName": "BREAM",
+        "choice": "multiple"
+    }    
+        );
+        
+
+categoryRef.doc().set(
+    {
+        "displayName": "Organisasjonstype",
+        "image": {
+            "large": "",
+            "medium": "",
+            "small": ""
+        },
+        "categoryItems": [
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 1,
+                "summary": "Private bedrifter",
+                "idName": "private",
+                "displayName": "Private bedrifter",
+                "article": "Private bedrifter"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 2,
+                "summary": "Kommuner og kommunale foretak",
+                "idName": "municipality",
+                "displayName": "Kommune",
+                "article": "Kommuner og kommunale foretak"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 3,
+                "summary": "Statlige organisasjoner",
+                "idName": "government",
+                "displayName": "Statlig",
+                "article": "Statlige organisasjoner"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 4,
+                "summary": "Organisasjoner",
+                "idName": "association",
+                "displayName": "Organisasjoner",
+                "article": "Organisasjoner"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 5,
+                "summary": "Frivillige organisasjoner",
+                "idName": "civil_society_ngo",
+                "displayName": "Frivillige organisasjoner",
+                "article": "Frivillige organisasjoner"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 6,
+                "summary": "Akademia",
+                "idName": "academia",
+                "displayName": "Akademia",
+                "article": "Akademia"
+            },
+            {
+                "image": {
+                    "large": "",
+                    "medium": "",
+                    "small": ""
+                },
+                "sortOrder": 7,
+                "summary": "Forskning",
+                "idName": "research",
+                "displayName": "Forskning",
+                "article": "Forskning"
+            }
+        ],
+        "summary": "Types of organizations",
+        "idName": "organizationType",
+        "choice": "single"
+    }    
+            );
+            
