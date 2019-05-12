@@ -11,33 +11,21 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
-
-//icontentful
-import * as contentful from 'contentful'
-
-
-const SPACE_ID = 'yynhhoh159d4'
-const ACCESS_TOKEN = '0eff50d6ae3fde62f9d4052b2ebb81eeea4c632c15f35eff0d05de63bc3f4fb0'
-
-const client = contentful.createClient({
-    space: SPACE_ID,
-    accessToken: ACCESS_TOKEN
-})
-
+import {compose} from "redux";
+import { connect } from 'react-redux'
+import { getMembers } from '../../../redux/actions/memberActions'
 
 // firebase imports
 import fire from "db/fire.js";
 
 
 
-
 class MemberGrid extends React.Component {
-
 
   constructor() {
     super()
     this.state = {
-        members: [],
+       isLoading:true,
         searchString: ''
     }
   }
@@ -52,13 +40,20 @@ class MemberGrid extends React.Component {
 
 getMembersFirebase = () => {
   const db = fire.firestore();
+  const memArr=[];
   
   db.collection('catalog_organisation').get()
   .then((snapshot) => {       
     snapshot.forEach((doc) => {
-      console.log(doc.id, '=>', JSON.stringify( doc.data()) );
-      // Ebe. Here is the data. How to get it into the right structure I leave to you
+      // Ebe. Here is the data. How to get it into the right structure I leave to you 
+      console.log( doc.data() );
+      memArr.push(doc.data())
+
     });
+     this.props.getMembers(memArr);
+     this.setState({
+      isLoading:false
+    })
   })
   .catch((err) => {
     console.log('Error getting documents', err);
@@ -92,7 +87,7 @@ getMembers = () => {
 
 
   render() {
-    const { classes, ...rest } = this.props;
+    const { classes,members,} = this.props;
     const imageClasses = classNames(
       classes.imgRaised,
       classes.imgFluid
@@ -100,23 +95,49 @@ getMembers = () => {
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
 
-    return (
-      <div>
+   
+      if (!this.state.isLoading){ return (<div>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <div className={classes.title}>
               <h3>Member search</h3>
             </div>
             <GridContainer>
-              {this.state.members.map(CurrentMember => (
-                <MemberCard  members={CurrentMember} />
+              {members.map(CurrentMember => (
+               <MemberCard key={CurrentMember} members={CurrentMember} /> 
+
               ))}
             </GridContainer>
           </div>
         </div>
-      </div>
-    );
+      </div>);}
+      else{
+        return (
+<div>Loading</div>
+        );
+      }
+    
   }
 }
 
-export default withStyles(memberPageStyle)(MemberGrid);
+//Redux Map actions to change Global state to Properties of this Component
+const mapDispatchToProps = dispatch => {
+  return {
+    getMembers: (member) => dispatch(getMembers(member))
+  }
+}
+
+//Redux Map Global state to Properties of this Component
+const mapStateToProps = (state, ownProps) => {
+  
+  console.log("lets see");
+   console.log(state.members);
+  return {
+    members:state.members
+  }
+}
+
+export default compose(
+  withStyles(memberPageStyle),
+  connect(mapStateToProps,mapDispatchToProps),
+)(MemberGrid);

@@ -53,7 +53,7 @@ class MemberCard extends React.Component {
             <a href="#pablo" onClick={e => e.preventDefault()}>
               
               <div className={classes.cardTitleAbsolute}>
-                {members.fields.displayName}
+                {members.displayName}
               </div>
             </a>
             <div
@@ -66,15 +66,15 @@ class MemberCard extends React.Component {
           </CardHeader>
           <CardBody>
             <Info>
-              <h6 className={classes.cardCategory}>{members.fields.slogan}</h6>
+              <h6 className={classes.cardCategory}>{members.slogan}</h6>
             </Info>
             <p className={classes.cardDescription}>
-              {members.fields.summary}
+              {members.summary}
             </p>
             <Link to={{
               pathname:"/member-profile",
               state: {
-                member: this.props.members
+                member: members.summary
               }
               }}>
                   <Button

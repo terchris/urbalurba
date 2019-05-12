@@ -45,12 +45,13 @@ class MemberProfilePage extends React.Component {
 
     const { member } = this.props.location.state;
     //.const { member } = this.props;//location.state;
-    
+    console.log("displayNamessaa")
+    console.log(this.props.location.state.member)
     return (
       <div>
 
         <MemberHeaderSection />
-        <div className={classNames(classes.main, classes.mainRaised)}>
+      {  /**  <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
@@ -60,8 +61,8 @@ class MemberProfilePage extends React.Component {
                     
                   </div>
                   <div className={classes.name}>
-                    <h1 className={classes.title}>{member.displayName}</h1>
-                    <h3>{member.slogan}</h3>
+                    <h1 className={classes.title}>{member}</h1>
+                    <h3>{memberPageStyle}</h3>
                   </div>
 
                 </div>
@@ -72,7 +73,7 @@ class MemberProfilePage extends React.Component {
               <GridItem xs={12} sm={12} md={10}>
                 <div className={classNames(classes.section)}>
                   <p>
-                    {member.fields.summary}
+                    {member.summary}
                   </p>
                 </div>
 
@@ -83,7 +84,9 @@ class MemberProfilePage extends React.Component {
                    
             <Clearfix />
           </div>
-        </div> 
+    </div> */}
+      
+      
       </div>
       
     );
