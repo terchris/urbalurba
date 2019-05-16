@@ -46,12 +46,12 @@ class MemberProfilePage extends React.Component {
     const { member } = this.props.location.state;
     //.const { member } = this.props;//location.state;
     console.log("displayNamessaa")
-    console.log(this.props.location.state.member)
+    console.log(member.image.medium)
     return (
       <div>
 
-        <MemberHeaderSection />
-      {  /**  <div className={classNames(classes.main, classes.mainRaised)}>
+        <MemberHeaderSection  bgImg={member.image.medium}/>
+        <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
@@ -61,8 +61,8 @@ class MemberProfilePage extends React.Component {
                     
                   </div>
                   <div className={classes.name}>
-                    <h1 className={classes.title}>{member}</h1>
-                    <h3>{memberPageStyle}</h3>
+                    <h1 className={classes.title}>{member.displayName}</h1>
+                    <h3>{member.slogan}</h3>
                   </div>
 
                 </div>
@@ -76,15 +76,12 @@ class MemberProfilePage extends React.Component {
                     {member.summary}
                   </p>
                 </div>
-
-                
-
               </GridItem>
             </GridContainer>
                    
             <Clearfix />
           </div>
-    </div> */}
+    </div>
       
       
       </div>

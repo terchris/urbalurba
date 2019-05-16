@@ -28,6 +28,7 @@ import MemberLandingPage from "views/Member/MemberLandingPage/MemberLandingPage.
 import { Provider } from 'react-redux'
 import { createStore, } from 'redux'
 import rootReducer from "./redux/reducers/rootReducer"
+import MemberHomePage from "./views/Member/SharedSection/MemberHomePage.jsx";
 var hist = createBrowserHistory();
 
 
@@ -56,6 +57,7 @@ ReactDOM.render(
       <Route path="/feilmeld" component={MainPage} />
       <Route path="/member-profile" component={MemberProfilePage} />
       <Route path="/member-landing" component={MemberLandingPage} />
+      <Route path="/member-home" component={MemberHomePage} />
       <Route path="/" component={PresentationPage} />
     </Switch>
   </Router>

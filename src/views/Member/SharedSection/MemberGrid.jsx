@@ -22,18 +22,19 @@ import fire from "db/fire.js";
 
 class MemberGrid extends React.Component {
 
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
        isLoading:true,
-        searchString: ''
+        searchString: '',
+        members:this.prop.members
     }
   }
 
   componentDidMount()
     {
         // contentful version this.getMembers();
-      this.getMembersFirebase();
+      //this.getMembersFirebase();
     }
 
 //firebase version 
@@ -64,28 +65,6 @@ getMembersFirebase = () => {
 }
 
 
-// contentful version     
-getMembers = () => {
-        client.getEntries({
-            content_type: 'organization',
-            query: this.state.searchString
-        })
-        .then((response) => {
-          console.log("Before something")
-            this.setState({members: response.items })
-
-            console.log("EWe have something")
-
-            console.log(this.state.members)
-        })
-        .catch((error) => {
-            console.log("Error occured while fetching data")
-            console.log(error)
-        })
-    }
-
-
-
   render() {
     const { classes,members,} = this.props;
     const imageClasses = classNames(
@@ -103,8 +82,8 @@ getMembers = () => {
               <h3>Member search</h3>
             </div>
             <GridContainer>
-              {members.map(CurrentMember => (
-               <MemberCard key={CurrentMember} members={CurrentMember} /> 
+              {this.state.members.map(CurrentMember => (
+               <MemberCard key={CurrentMember.displayName} members={CurrentMember} /> 
 
               ))}
             </GridContainer>

@@ -9,13 +9,14 @@ import backgroundImage from "assets/img/examples/city.jpg";
 import MemberTopMenu from "views/Member/SharedSection/MemberTopMenu.jsx";
 
 const MemberHeaderSection = props => {
-  const { classes } = props;
+  const { classes,bgImg } = props;
+  console.log()
   return (
     <div>
       <MemberTopMenu />
       <div
         className={classes.pageHeader}
-        style={{ backgroundImage: `url("${backgroundImage}")` }}
+        style={{ backgroundImage: `url("${bgImg}")` }}
       >
         <div className={classes.container} />
       </div>

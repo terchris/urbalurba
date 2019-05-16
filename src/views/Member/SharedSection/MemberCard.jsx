@@ -19,23 +19,10 @@ import CardFooter from "components/Card/CardFooter.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 
-//icontentful
-import * as contentful from 'contentful'
-
-
-const SPACE_ID = 'yynhhoh159d4'
-const ACCESS_TOKEN = '0eff50d6ae3fde62f9d4052b2ebb81eeea4c632c15f35eff0d05de63bc3f4fb0'
-
-const client = contentful.createClient({
-    space: SPACE_ID,
-    accessToken: ACCESS_TOKEN
-})
 
 class MemberCard extends React.Component {
 
 
-
-    
 
   render() {
     const { classes, ...rest } = this.props;
@@ -44,7 +31,7 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members } = this.props;
+    const { members,orgMembers, } = this.props;
     
     return (
       <GridItem xs={12} sm={4} md={4}>
@@ -53,7 +40,7 @@ class MemberCard extends React.Component {
             <a href="#pablo" onClick={e => e.preventDefault()}>
               
               <div className={classes.cardTitleAbsolute}>
-                {members.displayName}
+                {(orgMembers)?members.displayName:members}
               </div>
             </a>
             <div
@@ -66,15 +53,15 @@ class MemberCard extends React.Component {
           </CardHeader>
           <CardBody>
             <Info>
-              <h6 className={classes.cardCategory}>{members.slogan}</h6>
+              <h6 className={classes.cardCategory}>{(orgMembers)?members.slogan:members}</h6>
             </Info>
             <p className={classes.cardDescription}>
-              {members.summary}
+              {(orgMembers)?members.summary:members}
             </p>
             <Link to={{
-              pathname:"/member-profile",
+              pathname:(orgMembers)?"/member-profile":"/member-landing",
               state: {
-                member: members.summary
+                member: ((orgMembers)?members.slogan:members)
               }
               }}>
                   <Button

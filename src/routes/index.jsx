@@ -16,6 +16,7 @@ import SignupPage from "views/SignupPage/SignupPage.jsx";
 import MainPage from "views/Feilmeld/MainPage/MainPage.jsx";
 import MemberProfilePage from "views/Member/MemberProfilePage/MemberProfilePage.jsx";
 import MemberLandingPage from "views/Member/MemberLandingPage/MemberLandingPage.jsx";
+import MemberHomePage from "/views/Member/SharedSection/MemberHomePage";
 
 var indexRoutes = [
   { path: "/about-us", name: "AboutUsPage", component: AboutUsPage },
@@ -39,6 +40,7 @@ var indexRoutes = [
   { path: "/feilmeld", name: "FeilmeldPage", component: MainPage },
   { path: "/member-profile", name: "MemberProfilePage", component: MemberProfilePage },
   { path: "/member-landing", name: "MemberLandingPage", component: MemberLandingPage },  
+  { path: "/member-home", name: "MemberHomePage", component: MemberHomePage }, 
   { path: "/", name: "PresentationPage", component: PresentationPage }
 ];
 
