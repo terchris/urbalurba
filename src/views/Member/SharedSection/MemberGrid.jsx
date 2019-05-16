@@ -20,49 +20,33 @@ import fire from "db/fire.js";
 
 
 
+
 class MemberGrid extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-       isLoading:true,
+       isLoading:false,
         searchString: '',
-        members:this.prop.members
+        members:this.props.members,
+        organs:[]
     }
   }
-
-  componentDidMount()
-    {
-        // contentful version this.getMembers();
-      //this.getMembersFirebase();
-    }
-
-//firebase version 
-
-getMembersFirebase = () => {
-  const db = fire.firestore();
-  const memArr=[];
-  
-  db.collection('catalog_organisation').get()
-  .then((snapshot) => {       
-    snapshot.forEach((doc) => {
-      // Ebe. Here is the data. How to get it into the right structure I leave to you 
-      console.log( doc.data() );
-      memArr.push(doc.data())
-
-    });
-     this.props.getMembers(memArr);
-     this.setState({
-      isLoading:false
-    })
-  })
-  .catch((err) => {
-    console.log('Error getting documents', err);
-  });
-
-
-
+componentDidMount(){
+  this.getOrgs()
 }
+
+  getOrgs=()=>{
+    let membersaa = this.state.members;
+   // const { member } = this.props.location.state;
+    let filterOrg=membersaa.filter(org=>org.categories.organizationType=="academia")
+    console.log("filterOrg")
+    console.log(filterOrg)
+    this.setState({
+        organs:filterOrg
+    })
+   // this.props.getFilteredOrgs(orgtype)
+  }
 
 
   render() {
@@ -82,8 +66,8 @@ getMembersFirebase = () => {
               <h3>Member search</h3>
             </div>
             <GridContainer>
-              {this.state.members.map(CurrentMember => (
-               <MemberCard key={CurrentMember.displayName} members={CurrentMember} /> 
+              {this.state.organs.map(CurrentMember => (
+               <MemberCard key={CurrentMember.displayName} orgMembers={"something"} members={CurrentMember} /> 
 
               ))}
             </GridContainer>
@@ -101,8 +85,10 @@ getMembersFirebase = () => {
 
 //Redux Map actions to change Global state to Properties of this Component
 const mapDispatchToProps = dispatch => {
+  //const { members } = this.props.location.state;
   return {
-    getMembers: (member) => dispatch(getMembers(member))
+    //getMembers: (member) => dispatch(getMembers(member)),
+   // getFilteredOrgs: (orgType) => dispatch(getFilteredOrgs(orgType))
   }
 }
 
