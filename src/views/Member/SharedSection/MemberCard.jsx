@@ -31,7 +31,11 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members,orgMembers, } = this.props;
+    const { members,orgMembers,orgType } = this.props;
+
+    console.log("Caazzzo ce qua")
+    console.log(orgType)
+    console.log(members)
     
     return (
       <GridItem xs={12} sm={4} md={4}>
@@ -40,7 +44,7 @@ class MemberCard extends React.Component {
             <a href="#pablo" onClick={e => e.preventDefault()}>
               
               <div className={classes.cardTitleAbsolute}>
-                {(orgMembers)?members.displayName:members}
+                {(orgMembers)?members.displayName:orgType}
               </div>
             </a>
             <div
@@ -53,15 +57,15 @@ class MemberCard extends React.Component {
           </CardHeader>
           <CardBody>
             <Info>
-              <h6 className={classes.cardCategory}>{(orgMembers)?members.slogan:members}</h6>
+              <h6 className={classes.cardCategory}>{(orgMembers)?members.slogan:orgType}</h6>
             </Info>
             <p className={classes.cardDescription}>
-              {(orgMembers)?members.summary:members}
+              {(orgMembers)?members.summary:orgType}
             </p>
             <Link to={{
               pathname:(orgMembers)?"/member-profile":"/member-landing",
               state: {
-                member: ((orgMembers)?members.slogan:members)
+                item: (orgMembers)?members:orgType
               }
               }}>
                   <Button

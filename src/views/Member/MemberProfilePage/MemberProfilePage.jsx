@@ -43,7 +43,7 @@ class MemberProfilePage extends React.Component {
       classes.imgFluid
     );
 
-    const { member } = this.props.location.state;
+    const  member  = this.props.location.state.item;
     //.const { member } = this.props;//location.state;
     console.log("displayNamessaa")
     console.log(member.image.medium)

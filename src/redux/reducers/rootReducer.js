@@ -12,7 +12,7 @@ const initState = {
             members:action.members
         };
         case 'GET_FILTERED_ORGS':
-        let filterOrg=state.filter(org=>org.categories.organizationType==action.orgType)
+        let filterOrg=state.filter(org=>org.categories.organizationType===action.orgType)
         console.loh(filterOrg)
         return {
           //return filterdOrg

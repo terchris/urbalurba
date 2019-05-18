@@ -173,7 +173,9 @@ getMembersFirebase = () => {
      orgArray.push(doc.data().categories.organizationType)
     
     });
-
+    
+    // send organizations to Global State(Redux)
+    this.props.getMembers(organization);
     /**
      * trim OrgArray to get individual orgType values
      */
@@ -186,7 +188,6 @@ getMembersFirebase = () => {
       }
     }
 
-     this.props.getMembers(organization);
      let orgTypes=new Set(orgTypeArr);
      this.setState({
       isLoading:false,
@@ -202,7 +203,7 @@ getMembersFirebase = () => {
 
 
   render() {
-    const { classes,members,} = this.props;
+    const { classes,} = this.props;
    // const {members} =this.state;
     const imageClasses = classNames(
       classes.imgRaised,
@@ -218,7 +219,7 @@ getMembersFirebase = () => {
             </div>
             <GridContainer>
               {this.state.orgTypes.map(CurrentMember => (
-               <MemberCard key={CurrentMember} members={CurrentMember} /> 
+               <MemberCard key={CurrentMember} orgType={CurrentMember} /> 
 
               ))}
             </GridContainer>

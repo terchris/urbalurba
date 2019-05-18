@@ -20,6 +20,10 @@ class MemberLandingPage extends React.Component {
         document.body.scrollTop = 0;
     }
     render() {
+       console.log("Ora ci Siamo Shaba!!!")
+   console.log(this.props.location.state.item)
+
+    const orgType =this.props.location.state.item;
         const { classes, ...rest } = this.props;
         const imageClasses = classNames(
             classes.imgRaised,
@@ -29,7 +33,7 @@ class MemberLandingPage extends React.Component {
         return (
             <div>
                 <MemberTop />
-                <MemberGrid />
+                <MemberGrid organization={orgType}/>
                 <MemberFooter />
             </div>
         );

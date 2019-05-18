@@ -26,24 +26,38 @@ class MemberGrid extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-       isLoading:false,
+       isLoading:true,
         searchString: '',
         members:this.props.members,
         organs:[]
     }
-  }
+  } 
 componentDidMount(){
   this.getOrgs()
 }
 
   getOrgs=()=>{
     let membersaa = this.state.members;
+    let orgType = this.props.organization
+    
    // const { member } = this.props.location.state;
-    let filterOrg=membersaa.filter(org=>org.categories.organizationType=="academia")
-    console.log("filterOrg")
-    console.log(filterOrg)
+   console.log("What is This??")
+   console.log(orgType)
+    let filterOrg=membersaa.filter((org)=>{
+
+           if (org.categories.organizationType) {
+             console.log("Inside Grid")
+            console.log(JSON.stringify( org.categories.organizationType[0]))
+            console.log("Inside Grid OrgType")
+            console.log(orgType)
+          return  org.categories.organizationType[0]===orgType}
+          })
+   
+   /// console.log(filterOrg)
     this.setState({
-        organs:filterOrg
+        organs:filterOrg,
+        isLoading:false,
+
     })
    // this.props.getFilteredOrgs(orgtype)
   }
@@ -55,6 +69,7 @@ componentDidMount(){
       classes.imgRaised,
       classes.imgFluid
     );
+    
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
 
@@ -95,8 +110,8 @@ const mapDispatchToProps = dispatch => {
 //Redux Map Global state to Properties of this Component
 const mapStateToProps = (state, ownProps) => {
   
-  console.log("lets see");
-   console.log(state.members);
+ // console.log("lets see");
+  // console.log(state.members);
   return {
     members:state.members
   }

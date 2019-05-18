@@ -37,30 +37,30 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-<Router history={hist}>
-    <Switch>
-      <Route path="/about-us" component={AboutUsPage} />
-      <Route path="/blog-post" component={BlogPostPage} />
-      <Route path="/blog-posts" component={BlogPostsPage} />
-      <Route path="/components" component={ComponentsPage} />
-      <Route path="/contact-us" component={ContactUsPage} />
-      <Route path="/ecommerce-page" component={EcommercePage} />
-      <Route path="/landing-page" component={LandingPage} />
-      <Route path="/login-page" component={LoginPage} />
-      <Route path="/pricing" component={PricingPage} />
-      <Route path="/profile-page" component={ProfilePage} />
-      <Route path="/product-page" component={ProductPage} />
-      <Route path="/sections" component={SectionsPage} />
-      <Route path="/shopping-cart-page" component={ShoppingCartPage} />
-      <Route path="/signup-page" component={SignupPage} />
-      <Route path="/error-page" component={ErrorPage} />
-      <Route path="/feilmeld" component={MainPage} />
-      <Route path="/member-profile" component={MemberProfilePage} />
-      <Route path="/member-landing" component={MemberLandingPage} />
-      <Route path="/member-home" component={MemberHomePage} />
-      <Route path="/" component={PresentationPage} />
-    </Switch>
-  </Router>
+    <Router history={hist}>
+      <Switch>
+          <Route path="/about-us" component={AboutUsPage} />
+          <Route path="/blog-post" component={BlogPostPage} />
+          <Route path="/blog-posts" component={BlogPostsPage} />
+          <Route path="/components" component={ComponentsPage} />
+          <Route path="/contact-us" component={ContactUsPage} />
+          <Route path="/ecommerce-page" component={EcommercePage} />
+          <Route path="/landing-page" component={LandingPage} />
+          <Route path="/login-page" component={LoginPage} />
+          <Route path="/pricing" component={PricingPage} />
+          <Route path="/profile-page" component={ProfilePage} />
+          <Route path="/product-page" component={ProductPage} />
+          <Route path="/sections" component={SectionsPage} />
+          <Route path="/shopping-cart-page" component={ShoppingCartPage} />
+          <Route path="/signup-page" component={SignupPage} />
+          <Route path="/error-page" component={ErrorPage} />
+          <Route path="/feilmeld" component={MainPage} />
+          <Route path="/member-profile" component={MemberProfilePage} />
+          <Route path="/member-landing" component={MemberLandingPage} />
+          <Route path="/member-home" component={MemberHomePage} />
+          <Route path="/" component={PresentationPage} />
+      </Switch>
+    </Router>
   </Provider>
   ,
   document.getElementById("root")
