@@ -11,6 +11,8 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
+import MemberFooter from "views/Member/SharedSection/MemberFooter.jsx";
+import MemberTop from "views/Member/SharedSection/MemberTop.jsx";
 import {compose} from "redux";
 import { connect } from 'react-redux'
 import { getMembers } from '../../../redux/actions/memberActions'
@@ -170,29 +172,34 @@ getMembersFirebase = () => {
 
       //Terje. this would be best if it returned just a string instead of an array,
       // Perhaps we could look into it. I'm not sure how much time that will take
-     orgArray.push(doc.data().categories.organizationType)
+      if(doc.data().categories.organizationType){
+        orgArray.push(doc.data().categories.organizationType)
+      }
+     
     
     });
     
     // send organizations to Global State(Redux)
     this.props.getMembers(organization);
     /**
-     * trim OrgArray to get individual orgType values
+     *********OLD WAY OF GETTING ORGTYPES********************* trim OrgArray to get individual orgType values
      */
-    let d=0// individual values are always the first index of Orgtype array
-    for (let i = 0; i < orgArray.length; i++) { 
-      if(orgArray[i])
-      {orgTypeArr.push(orgArray[i][d])}
-      else{
-        console.log("index of currupted Data: ",i)
-      }
-    }
+    // let d=0// individual values are always the first index of Orgtype array
+    // for (let i = 0; i < orgArray.length; i++) { 
+    //   if(orgArray[i])
+    //   {orgTypeArr.push(orgArray[i][d])}
+    //   else{
+    //     console.log("index of currupted Data: ",i)
+    //   }
+    // }
+     //let orgTypes=new Set(orgTypeArr);
 
-     let orgTypes=new Set(orgTypeArr);
+    let orgTypes=this.getCatCount(orgArray);
+
      this.setState({
       isLoading:false,
       orgs:organization,
-      orgTypes:[...orgTypes]
+      orgTypes:orgTypes
 
     })
   })
@@ -201,7 +208,58 @@ getMembersFirebase = () => {
   });
 }
 
+// get OrgType and total count for a particular orgtype
+getCatCount=(orgTypeArray)=>{
+  
+  let orgToLoop = orgTypeArray;
 
+  let tempOrgType=""// temporary org type
+  let tempCount=0// temporary count
+
+  let orgType;
+  let orgTypeCount =[];
+  let notFiltered=true
+   
+    //filter Arr based on this orgtype, count all those ==="this orgtype ", 
+    //return this filtered array as new array to be looped
+    while(notFiltered){
+
+      if(orgToLoop.length>1){   
+
+        // assign orgtype to temp
+          tempOrgType=orgToLoop[0][0]
+          tempCount=0
+          orgType={ name:"", count:0};
+
+          const newLoop=orgToLoop.filter(organtype=>
+          {
+                  if(organtype[0]!==tempOrgType){
+                    return organtype
+                  }
+                  else{
+                    //console.log("Count Happening")
+                    tempCount=tempCount+1;
+                  }
+            })
+            
+          orgType.name=tempOrgType
+          orgType.count=tempCount
+
+          orgTypeCount.push(orgType)
+      
+          orgToLoop=newLoop
+            
+      } else{
+        
+        notFiltered=false
+      }
+
+
+    }
+    
+
+  return orgTypeCount
+}
   render() {
     const { classes,} = this.props;
    // const {members} =this.state;
@@ -212,6 +270,7 @@ getMembersFirebase = () => {
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
       if (!this.state.isLoading){ return (<div>
+        <MemberTop />
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <div className={classes.title}>
@@ -219,12 +278,14 @@ getMembersFirebase = () => {
             </div>
             <GridContainer>
               {this.state.orgTypes.map(CurrentMember => (
-               <MemberCard key={CurrentMember} orgType={CurrentMember} /> 
+               <MemberCard key={CurrentMember.name} orgCount={CurrentMember.count} orgType={CurrentMember.name} /> 
 
               ))}
             </GridContainer>
           </div>
         </div>
+        
+        <MemberFooter />
       </div>);}
       else{
         return (
