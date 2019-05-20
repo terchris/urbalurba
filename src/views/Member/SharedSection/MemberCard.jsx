@@ -22,8 +22,6 @@ import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 
 class MemberCard extends React.Component {
 
-
-
   render() {
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(
@@ -31,12 +29,8 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members,orgMembers,orgType } = this.props;
+    const { members,orgMembers,orgType,orgCount } = this.props;
 
-    console.log("Caazzzo ce qua")
-    console.log(orgType)
-    console.log(members)
-    
     return (
       <GridItem xs={12} sm={4} md={4}>
         <Card profile>
@@ -44,7 +38,7 @@ class MemberCard extends React.Component {
             <a href="#pablo" onClick={e => e.preventDefault()}>
               
               <div className={classes.cardTitleAbsolute}>
-                {(orgMembers)?members.displayName:orgType}
+                {(orgMembers)?members.displayName:orgCount +" Of "+orgType}
               </div>
             </a>
             <div

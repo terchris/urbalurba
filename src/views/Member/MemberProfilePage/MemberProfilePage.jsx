@@ -44,9 +44,6 @@ class MemberProfilePage extends React.Component {
     );
 
     const  member  = this.props.location.state.item;
-    //.const { member } = this.props;//location.state;
-    console.log("displayNamessaa")
-    console.log(member.image.medium)
     return (
       <div>
 

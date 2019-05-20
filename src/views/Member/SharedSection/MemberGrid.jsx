@@ -37,25 +37,16 @@ componentDidMount(){
 }
 
   getOrgs=()=>{
-    let membersaa = this.state.members;
+    let members = this.state.members;
     let orgType = this.props.organization
-    
-   // const { member } = this.props.location.state;
-   console.log("What is This??")
-   console.log(orgType)
-    let filterOrg=membersaa.filter((org)=>{
+    let filteredOrg=members.filter((org)=>{
 
            if (org.categories.organizationType) {
-             console.log("Inside Grid")
-            console.log(JSON.stringify( org.categories.organizationType[0]))
-            console.log("Inside Grid OrgType")
-            console.log(orgType)
           return  org.categories.organizationType[0]===orgType}
           })
    
-   /// console.log(filterOrg)
     this.setState({
-        organs:filterOrg,
+        organs:filteredOrg,
         isLoading:false,
 
     })
@@ -82,7 +73,7 @@ componentDidMount(){
             </div>
             <GridContainer>
               {this.state.organs.map(CurrentMember => (
-               <MemberCard key={CurrentMember.displayName} orgMembers={"something"} members={CurrentMember} /> 
+               <MemberCard key={CurrentMember.displayName} orgMembers={"orgtypeCheck"} members={CurrentMember} /> 
 
               ))}
             </GridContainer>
