@@ -6,9 +6,10 @@
     "urbalurbacore": {
       "hosting": {
         "urbalurba-admin": [
-          "urbalurbacore"
+          "urbalurba"
         ]
       }
     }
+
   }
 }

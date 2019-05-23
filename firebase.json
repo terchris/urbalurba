@@ -6,8 +6,10 @@
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
   },
-  "hosting": {
-    "public": "public",
+  "hosting": [
+    {
+    "target": "urbalurba-admin",  
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -19,7 +21,8 @@
         "destination": "/index.html"
       }
     ]
-  },
+  }
+],
   "storage": {
     "rules": "firebase/storage.rules"
   }
