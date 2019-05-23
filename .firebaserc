@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "urbalurbacore"
+  },
+  "targets": {
+    "urbalurbacore": {
+      "hosting": {
+        "urbalurba-admin": [
+          "urbalurbacore"
+        ]
+      }
+    }
+  }
+}
