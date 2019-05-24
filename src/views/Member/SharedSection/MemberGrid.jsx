@@ -157,7 +157,7 @@ getSegment=(event)=>{
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <div className={classes.title}>
-              <h3>Member searchaaaaa</h3>
+              <h3>Member search</h3>
              <div className="segments">
               
                 {this.getArraySeg()}

@@ -14,7 +14,7 @@ import headersStyle from "assets/jss/material-kit-pro-react/views/sectionsSectio
 import MemberTopMenu from "views/Member/SharedSection/MemberTopMenu.jsx";
 import MemberTypeStat from "views/Member/SharedSection/MemberTypeStat.jsx";
 
-import bg12 from "assets/img/bg12.jpg";
+import bgImg from "assets/img/bg12.jpg";
 
 function MemberTop({ ...props }) {
    const { classes} = props;
@@ -26,7 +26,7 @@ function MemberTop({ ...props }) {
         <MemberTopMenu />
         <div
           className={classes.pageHeader}
-          style={{ backgroundImage: `url("${bg12}")` }}
+          style={{ backgroundImage: `url("${bgImg}")` }}
         >
           <div className={classes.container}>
             <GridContainer>

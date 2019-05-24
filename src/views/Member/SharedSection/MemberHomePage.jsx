@@ -143,7 +143,8 @@ class MemberHomePage extends React.Component {
        //members:offlineData,
        orgTypes:[],
        orgs:[],
-       searchString: ''
+       searchString: '',
+       image:""
     }
   }
 
@@ -151,10 +152,10 @@ class MemberHomePage extends React.Component {
     {
         // ===>contentful version this.getMembers();
       this.getMembersFirebase();
+      this.getCategoriesFirebase();
     }
 
-//firebase version 
-
+//firebase call for All Organizations 
 getMembersFirebase = () => {
   const db = fire.firestore();
   let organization=[];
@@ -202,6 +203,44 @@ getMembersFirebase = () => {
       orgTypes:orgTypes
 
     })
+  })
+  .catch((err) => {
+    console.log('Error getting documents', err);
+  });
+}
+
+//firebase call for All Categories 
+getCategoriesFirebase = () => {
+  const db = fire.firestore();
+  let categories=[];
+  let orgArray=[];
+  let orgTypeArr=[]
+ 
+  
+  db.collection('catalog_category').get()
+  .then((snapshot) => {       
+    snapshot.forEach((doc) => {
+      // Ebe. Here is the data. How to get it into the right structure I leave to you 
+    
+      categories.push(doc.data())
+     });
+     console.log("All Cazz")
+     console.log(categories[4].categoryItems[0].image.medium)
+     this.setState({
+       image:categories[4].categoryItems[0].image.medium
+     })
+
+    // // send organizations to Global State(Redux)
+    // this.props.getMembers(categories);
+
+    // let orgTypes=this.getCatCount(orgArray);
+
+    //  this.setState({
+    //   isLoading:false,
+    //   orgs:organization,
+    //   orgTypes:orgTypes
+
+    // })
   })
   .catch((err) => {
     console.log('Error getting documents', err);
@@ -267,18 +306,24 @@ getCatCount=(orgTypeArray)=>{
       classes.imgRaised,
       classes.imgFluid
     );
-    const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
+    const navImageClasses = classNames(
+      classes.imgRounded, classes.imgGallery);
 
       if (!this.state.isLoading){ return (<div>
         <MemberTop />
-        <div className={classNames(classes.main, classes.mainRaised)}>
+        <div className={classNames(
+          classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <div className={classes.title}>
               <h3>Member search</h3>
             </div>
             <GridContainer>
               {this.state.orgTypes.map(CurrentMember => (
-               <MemberCard key={CurrentMember.name} orgCount={CurrentMember.count} orgType={CurrentMember.name} /> 
+               <MemberCard 
+               image={this.state.image}
+               key={CurrentMember.name} 
+               orgCount={CurrentMember.count} 
+               orgType={CurrentMember.name} /> 
 
               ))}
             </GridContainer>
@@ -296,14 +341,16 @@ getCatCount=(orgTypeArray)=>{
   }
 }
 
-//Redux Map actions to change Global state to Properties of this Component
+//Redux Map actions to change Global state to 
+//properties of this Component
 const mapDispatchToProps = dispatch => {
   return {
     getMembers: (member) => dispatch(getMembers(member))
   }
 }
 
-//Redux Map Global state to Properties of this Component
+//Redux Map Global state to 
+//properties of this Component
 const mapStateToProps = (state, ownProps) => {
   
   console.log("lets see");

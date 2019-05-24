@@ -29,7 +29,7 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members,orgMembers,orgType,orgCount } = this.props;
+    const { members,orgMembers,orgType,orgCount,image } = this.props;
 
     return (
       <GridItem xs={12} sm={4} md={4}>
@@ -37,7 +37,13 @@ class MemberCard extends React.Component {
           <CardHeader image>
             <a href="#pablo" onClick={e => e.preventDefault()}>
               
-              <div className={classes.cardTitleAbsolute}>
+              <img
+                src={image}
+                alt="Logo"
+              />
+            
+              <div
+              className={classes.cardTitleAbsolute}>
                 {(orgMembers)?members.displayName:orgCount +" Of "+orgType}
               </div>
             </a>
@@ -49,11 +55,16 @@ class MemberCard extends React.Component {
               }}
             />
           </CardHeader>
-          <CardBody>
+          <CardBody
+          
+          style={{backgroundColor:"red",
+          maxHeight:150}}>
             <Info>
               <h6 className={classes.cardCategory}>{(orgMembers)?members.slogan:orgType}</h6>
             </Info>
-            <p className={classes.cardDescription}>
+            <p
+           
+            className={classes.cardDescription}>
               {(orgMembers)?members.summary:orgType}
             </p>
             <Link to={{
