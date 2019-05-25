@@ -28,7 +28,7 @@ import MemberLandingPage from "views/Member/MemberLandingPage/MemberLandingPage.
 import { Provider } from 'react-redux'
 import { createStore, } from 'redux'
 import rootReducer from "./redux/reducers/rootReducer"
-import MemberHomePage from "./views/Member/SharedSection/MemberHomePage.jsx";
+import MemberHomePage from "./views/Member/MemberHomePage/MemberHomePage.jsx";
 var hist = createBrowserHistory();
 
 
