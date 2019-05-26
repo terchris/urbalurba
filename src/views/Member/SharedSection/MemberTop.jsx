@@ -31,7 +31,7 @@ function MemberTop({ ...props }) {
           <div className={classes.container}>
             <GridContainer>
               <GridItem xs={12} sm={6} md={6}>
-                <h1 className={classes.title}>Smartbykatalogen!!!nobyebe</h1>
+                <h1 className={classes.title}>Smartbykatalogen!</h1>
                 <h4>Norges største nettverk av smartbyentusiaster</h4>
                 <br />
                 <Button
