@@ -19,9 +19,7 @@ import CardFooter from "components/Card/CardFooter.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 
-
 class MemberCard extends React.Component {
-
   render() {
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(
@@ -29,57 +27,45 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members,orgMembers,orgType,orgCount,image } = this.props;
-
+    const { members, orgMembers, orgType, orgCount, image } = this.props;
     return (
       <GridItem xs={12} sm={4} md={4}>
         <Card profile>
           <CardHeader image>
             <a href="#pablo" onClick={e => e.preventDefault()}>
-              
-              <img
-                src={image}
-                alt="Logo"
-              />
-            
-              <div
-              className={classes.cardTitleAbsolute}>
-                {(orgMembers)?members.displayName:orgCount +" Of "+orgType}
+              <img src={image} alt="logo" />
+              <div className={classes.cardTitleAbsolute}>
+                {(orgMembers) ? members.displayName : orgCount + " Of " + orgType}
               </div>
             </a>
             <div
               className={classes.coloredShadow}
               style={{
-                
+                backgroundImage: `url(${image})`,
                 opacity: "1"
               }}
             />
           </CardHeader>
-          <CardBody
-          
-          style={{backgroundColor:"red",
-          maxHeight:150}}>
+          <CardBody>
             <Info>
-              <h6 className={classes.cardCategory}>{(orgMembers)?members.slogan:orgType}</h6>
+              <h6 className={classes.cardCategory}>{(orgMembers) ? members.slogan : orgType}</h6>
             </Info>
-            <p
-           
-            className={classes.cardDescription}>
-              {(orgMembers)?members.summary:orgType}
+            <p className={classes.cardDescription}>
+              {(orgMembers) ? members.summary : orgType}
             </p>
             <Link to={{
-              pathname:(orgMembers)?"/member-profile":"/member-landing",
+              pathname: (orgMembers) ? "/member-profile" : "/member-landing",
               state: {
-                item: (orgMembers)?members:orgType
+                item: (orgMembers) ? members : orgType
               }
-              }}>
-                  <Button
-                    color="rose"
-                    target="_blank"
-                    className={classes.navButton}
-                    round
-                  >
-                    se member
+            }}>
+              <Button
+                color="rose"
+                target="_blank"
+                className={classes.navButton}
+                round
+              >
+                se member
                   </Button>
             </Link>
           </CardBody>
