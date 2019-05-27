@@ -30,21 +30,21 @@ class MemberTagsSection extends React.Component {
             <GridContainer>
                 <GridItem>
                     <h4 className={classes.title}>Member tags</h4>
-                    {/**member.member_tags.map(CurrentTag => (
+                    {member.sdg&&member.sdg.map(CurrentTag => (
                         <Badge color="primary">{CurrentTag}</Badge>
-                    )) */}
+                    )) }
                     <hr />
                     <h4 className={classes.title}>Segment</h4>
-                    {member.categories.segment.map(CurrentTag => (
+                    {member.categories.segment&&member.categories.segment.map(CurrentTag => (
                         <Badge color="info">{CurrentTag}</Badge>
                     ))}
 
 
                     <hr />
                     <h4 className={classes.title}>Solving these problems</h4>
-                    {/**member.insightly_tags.map(CurrentTag => (
+                    {member.categories.challenges&&member.categories.challenges.map(CurrentTag => (
                         <Badge color="success">{CurrentTag}</Badge>
-                    )) */}
+                    )) }
                 </GridItem>
             </GridContainer>
         );
