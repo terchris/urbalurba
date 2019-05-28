@@ -29,6 +29,11 @@ import { Provider } from 'react-redux'
 import { createStore, } from 'redux'
 import rootReducer from "./redux/reducers/rootReducer"
 import MemberHomePage from "./views/Member/MemberHomePage/MemberHomePage.jsx";
+
+import MemberHomePage2 from "./views/Member/MemberHomePage/MemberHomePage2";
+import MemberLandingPage2 from "./views/Member/MemberLandingPage/MemberLandingPage2.jsx";
+
+
 var hist = createBrowserHistory();
 
 
@@ -58,6 +63,8 @@ ReactDOM.render(
           <Route path="/member-profile" component={MemberProfilePage} />
           <Route path="/member-landing" component={MemberLandingPage} />
           <Route path="/member-home" component={MemberHomePage} />
+          <Route path="/member-home2" component={MemberHomePage2} />
+          <Route path= "/member-landing2" component={MemberLandingPage2} /> 
           <Route path="/" component={PresentationPage} />
       </Switch>
     </Router>
