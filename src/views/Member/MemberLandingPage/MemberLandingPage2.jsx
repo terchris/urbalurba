@@ -14,7 +14,7 @@ import MemberTop from "views/Member/SharedSection/MemberTop.jsx";
 import MemberGrid2 from "views/Member/SharedSection/MemberGrid2.jsx";
 
 
-class MemberLandingPage extends React.Component {
+class MemberLandingPage2 extends React.Component {
     componentDidMount() {
         window.scrollTo(0, 0);
         document.body.scrollTop = 0;
@@ -40,5 +40,5 @@ class MemberLandingPage extends React.Component {
     }
 }
 
-export default withStyles(memberPageStyle)(MemberLandingPage);
+export default withStyles(memberPageStyle)(MemberLandingPage2);
 

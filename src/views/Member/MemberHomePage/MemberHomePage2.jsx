@@ -10,7 +10,8 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
-import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
+//changed to ver 2: import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
+import CategoryCard2 from "views/Member/SharedSection/CategoryCard2.jsx";
 import MemberFooter from "views/Member/SharedSection/MemberFooter.jsx";
 import MemberTop from "views/Member/SharedSection/MemberTop.jsx";
 import {compose} from "redux";
@@ -133,7 +134,7 @@ const offlineData=[
   }
 ]
 
-class MemberHomePage extends React.Component {
+class MemberHomePage2 extends React.Component {
 
   constructor() {
     super()
@@ -319,7 +320,7 @@ getCatCount=(orgTypeArray)=>{
             </div>
             <GridContainer>
               {this.state.orgTypes.map(CurrentMember => (
-               <MemberCard 
+               <CategoryCard2 
                image={this.state.image}
                key={CurrentMember.name} 
                orgCount={CurrentMember.count} 
@@ -363,4 +364,4 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
   withStyles(memberPageStyle),
   connect(mapStateToProps,mapDispatchToProps),
-)(MemberHomePage);
+)(MemberHomePage2);
