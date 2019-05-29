@@ -43,7 +43,7 @@ class MemberProfilePage extends React.Component {
       classes.imgFluid
     );
 
-    const member  = this.props.location.state.item; 
+    const member = this.props.location.state.item;
     return (
       <div>
 
@@ -55,7 +55,7 @@ class MemberProfilePage extends React.Component {
                 <div className={classes.memberLogo}>
                   <div>
                     <img src={member.image.medium} alt="logo" className={imageClasses} />
-                    
+
                   </div>
                   <div className={classes.name}>
                     <h1 className={classes.title}>{member.displayName}</h1>
@@ -74,72 +74,70 @@ class MemberProfilePage extends React.Component {
                   </p>
                 </div>
 
-                <SDGGrid sdg={member.sustainable_development_goals}/>
+                <SDGGrid sdg={member.sustainable_development_goals} />
 
               </GridItem>
 
               <GridItem xs={12} sm={12} md={2}>
 
-                <MemberTagsSection member={member}/>
+                <MemberTagsSection member={member} />
 
               </GridItem>
             </GridContainer>
 
-          {/**Condition for rendering to be put around nav pils.. 
+            {/**Condition for rendering to be put around nav pils.. 
           should only show for acando */}
 
-            <NavPills
-                alignCenter
-                color="primary"
-                tabs={[
-                  {
-                    tabButton: "Summary",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberSummarySection />
-                    )
-                  },
-                  {
-                    tabButton: "Solutions",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberSolutionSection />
-                    )
-                  },
-                  {
-                    tabButton: "Projects",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberProjectSection />
-                    )
-                  },
-                  {
-                    tabButton: "Publications",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberBlogSection />
-                    )
-                  },
-                  {
-                    tabButton: "Datasets",
-                    tabIcon: Palette,
-                    tabContent: (
-                      <MemberBlogSection />
-                    )
-                  }
-                ]}
-              />                  
-
-
+            {(member.displayName == "acando" || member.displayName == "Acando") ? <NavPills
+              alignCenter
+              color="primary"
+              tabs={[
+                {
+                  tabButton: "Summary",
+                  tabIcon: Palette,
+                  tabContent: (
+                    <MemberSummarySection />
+                  )
+                },
+                {
+                  tabButton: "Solutions",
+                  tabIcon: Palette,
+                  tabContent: (
+                    <MemberSolutionSection />
+                  )
+                },
+                {
+                  tabButton: "Projects",
+                  tabIcon: Palette,
+                  tabContent: (
+                    <MemberProjectSection />
+                  )
+                },
+                {
+                  tabButton: "Publications",
+                  tabIcon: Palette,
+                  tabContent: (
+                    <MemberBlogSection />
+                  )
+                },
+                {
+                  tabButton: "Datasets",
+                  tabIcon: Palette,
+                  tabContent: (
+                    <MemberBlogSection />
+                  )
+                }
+              ]}
+            /> : null}
 
             <MemberTeamSection />
-            <MemberFooterSection member={member} />        
+            <MemberFooterSection member={member} />
             <Clearfix />
           </div>
-        </div> 
+        </div>
         <MemberFooter />
       </div>
-      
+
     );
   }
 }
