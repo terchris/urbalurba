@@ -54,7 +54,7 @@ class MemberCard extends React.Component {
               {(orgMembers) ? members.summary : orgType}
             </p>
             <Link to={{
-              pathname: (orgMembers) ? "/member-profile" : "/member-landing",
+              pathname: (orgMembers) ? `/org/${members.idName}` : "/member-landing",
               state: {
                 item: (orgMembers) ? members : orgType
               }

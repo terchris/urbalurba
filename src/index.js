@@ -61,7 +61,7 @@ ReactDOM.render(
           <Route path="/signup-page" component={SignupPage} />
           <Route path="/error-page" component={ErrorPage} />
           <Route path="/feilmeld" component={MainPage} />
-          <Route path="/member-profile" component={MemberProfilePage} />
+          <Route path="/org/orgName" component={MemberProfilePage} />
           <Route path="/org/:urlOrg" component={MemberProfilePage} />
           <Route path="/member-landing" component={MemberLandingPage} />
           <Route path="/member-home" component={MemberHomePage} />
