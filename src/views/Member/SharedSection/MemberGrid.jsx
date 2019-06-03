@@ -11,12 +11,13 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
-import {compose} from "redux";
+import { compose } from "redux";
 import { connect } from 'react-redux'
 import { getMembers } from '../../../redux/actions/memberActions'
 
 // firebase imports
 import fire from "db/fire.js";
+const db = fire.firestore();
 
 
 
@@ -26,181 +27,187 @@ class MemberGrid extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-       isLoading:true,
-        searchString: '',
-        members:this.props.members,
-        organs:[],
-        orgsDisplayed:[]
-        //searched
+      isLoading: true,
+      searchString: '',
+      members: this.props.members,
+      organs: [],
+      orgsDisplayed: [],
+      filterItem: this.props.organization,
+      segmentTag: this.props.segmentTag
+      //searched
     }
-  } 
-componentDidMount(){
- 
-  this.getOrgs()
-  //this.getArraySeg()
+  }
+  componentDidMount() {
+    let segmentTag = this.state.segmentTag
+    if (segmentTag) {
+      this.getSegmentOrChallenge(segmentTag)
+    }
+    else {
+      this.getOrgs()
+    }
+    //this.getArraySeg()
 
-}
+  }
 
-// get all possible segments{
-//   going through each org and getting all elements in segment array
+  // get all possible segments{
+  //   going through each org and getting all elements in segment array
 
-getArraySeg=()=>{
-  
- let org=this.state.members
-  let segArr=[];
-  let segSet = new Set();
+  getArraySeg = () => {
 
- // let segmentArray=members.filter((org)=>{
-  console.log("Yattaaaa For Orgs");
-  console.log(org);
+    let org = this.state.members
+    let segArr = [];
+    let segSet = new Set();
+    for (let n = 0; n < org.length; n++) {
 
-  for (let n=0;n<org.length;n++){
-    //for (org.categories.segment in org){
-      // if(n===132){
-      //   console.log("che problemi hai????????????????????")
-      // }
-
-     //else{ 
-       if (org[n].categories.segment) {
-        
-      // console.log("I was here??")
-      //   console.log(org[n].categories.segment)
-      segArr.push(...org[n].categories.segment)
-        }
-      //   else {
-          
-      //   }
-      // }
-
+      if (org[n].categories.segment) {
+        segArr.push(...org[n].categories.segment)
+      }
     }
 
-    segSet=new Set (segArr)
-
-    // console.log("Yattaaaa");
-    // console.log(segArr)
-    // console.log(segSet)
-    //let colornumber=Math.floor((Math.random() * 100000) + 100000);
-    let segToMap=[...segSet].map(
-      segment=> {
-        let colornumber=Math.floor((Math.random() * 100000) + 100000);
-        return(
-              <span onClick={this.getSegment} style={{backgroundColor:"#"+colornumber}}>{segment}</span>
+    segSet = new Set(segArr)
+    let segToMap = [...segSet].map(
+      segment => {
+        let colornumber = Math.floor((Math.random() * 100000) + 100000);
+        return (
+          <span onClick={this.getSegment} style={{ backgroundColor: "#" + colornumber }}>{segment}</span>
         );
       }
     )
 
-
     return segToMap
+  }
+  // final segment should be a set of all segment types available
 
-}
-// }
+  getSegment = (event) => {
+    let members = this.state.organs;
+    let segment = event.target.textContent
+    let segmentOrgs = members.filter((org) => {
 
-// final segment should be a set of all segment types available
+      if (org.categories.segment) {
+        return org.categories.segment.includes(segment)
+      }
+    })
 
-
-getSegment=(event)=>{
-  // console.log("Before filt")
-  // console.log(this.state.organs)
-  // this.getOrgs();
- // console.log(this.state.organs)
- // console.log("AFter filt")
-  let members = this.state.organs;
-  let segment = event.target.textContent
-  let segmentOrgs=members.filter((org)=>{
-
-         if (org.categories.segment) {
-        return  org.categories.segment.includes(segment)}
-        })
- 
-  this.setState({
-    orgsDisplayed:segmentOrgs,
-      isLoading:false,
-
-  })
- // this.props.getFilteredOrgs(orgtype)
-}
-
-  getOrgs=()=>{
-    let members = this.state.members;
-    let orgType = this.props.organization
-    console.log("Ruler")
-    console.log(orgType)
-    let filteredOrg=members.filter((org)=>{
-
-           if (org.categories.organizationType) {
-          return  org.categories.organizationType[0]===orgType}
-          })
-   
     this.setState({
-        organs:filteredOrg,
-        isLoading:false,
-        orgsDisplayed:filteredOrg,
+      orgsDisplayed: segmentOrgs,
+      isLoading: false,
+    })
+    // this.props.getFilteredOrgs(orgtype)
+  }
+
+  getSegmentOrChallenge = (check) => {
+    //coolection where
+    const tempArr = []
+    console.log("From Challenge")
+    db.collection("catalog_organisation").get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+
+          if (doc.data().categories.segment) {
+            let arr = doc.data().categories.segment
+            if (arr.includes(check)) {
+              tempArr.push(doc.data())
+            }
+            else { console.log("Niente") }
+          }
+
+          else { console.log("No Segment For", doc.data().displayName) }
+        });
+
+      }).then(() => {
+        this.setState({
+          isLoading: false,
+          orgsDisplayed: tempArr,
+
+        })
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+  }
+
+  getOrgs = () => {
+    let members = this.state.members;
+    let orgType = this.state.filterItem
+    let filteredOrg = members.filter((org) => {
+
+      if (org.categories.organizationType) {
+        return org.categories.organizationType[0] === orgType
+      }
+    })
+
+    this.setState({
+      organs: filteredOrg,
+      isLoading: false,
+      orgsDisplayed: filteredOrg,
 
     })
-   // this.props.getFilteredOrgs(orgtype)
+    // this.props.getFilteredOrgs(orgtype)
 
   }
 
-
   render() {
-    const { classes,members,} = this.props;
+    const { classes, members, } = this.props;
     const imageClasses = classNames(
       classes.imgRaised,
       classes.imgFluid
     );
-    
+
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
 
-
-   
-      if (!this.state.isLoading){ return (<div>
+    if (!this.state.isLoading) {
+      return (<div>
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <div className={classes.title}>
               <h3>Member search</h3>
-             <div className="segments">
-              
+              <div className="segments">
+
                 {this.getArraySeg()}
-             </div>
+              </div>
             </div>
             <GridContainer>
               {this.state.orgsDisplayed.map(CurrentMember => (
-               <MemberCard key={CurrentMember.displayName} orgMembers={"orgtypeCheck"} members={CurrentMember} /> 
+                <MemberCard key={CurrentMember.displayName} orgMembers={"orgtypeCheck"} members={CurrentMember} />
 
               ))}
             </GridContainer>
           </div>
         </div>
-      </div>);}
-      else{
-        return (
-<div>Loading</div>
-        );
-      }
-    
+      </div>);
+    }
+    else {
+      return (
+        <div>........Loading</div>
+      );
+    }
+
   }
 }
 
+
+
+//**************REDUX CONNECTION */
 //Redux Map actions to change Global state to Properties of this Component
 const mapDispatchToProps = dispatch => {
   //const { members } = this.props.location.state;
   return {
     //getMembers: (member) => dispatch(getMembers(member)),
-   // getFilteredOrgs: (orgType) => dispatch(getFilteredOrgs(orgType))
+    // getFilteredOrgs: (orgType) => dispatch(getFilteredOrgs(orgType))
   }
 }
 
 //Redux Map Global state to Properties of this Component
 const mapStateToProps = (state, ownProps) => {
-  
- // console.log("lets see");
+
+  // console.log("lets see");
   // console.log(state.members);
   return {
-    members:state.members
+    members: state.members
   }
 }
 
 export default compose(
   withStyles(memberPageStyle),
-  connect(mapStateToProps,mapDispatchToProps),
+  connect(mapStateToProps, mapDispatchToProps),
 )(MemberGrid);

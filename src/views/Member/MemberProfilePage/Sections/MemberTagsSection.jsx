@@ -14,7 +14,7 @@ import Badge from "components/Badge/Badge.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 
-
+import { Link } from "react-router-dom";
 
 class MemberTagsSection extends React.Component {
     render() {
@@ -25,26 +25,58 @@ class MemberTagsSection extends React.Component {
         );
         const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
         const { member } = this.props;
-        
+
         return (
             <GridContainer>
                 <GridItem>
                     <h4 className={classes.title}>Member tags</h4>
-                    {member.sdg&&member.sdg.map(CurrentTag => (
-                        <Badge color="primary">{CurrentTag}</Badge>
-                    )) }
+                    {member.sdg && member.sdg.map(CurrentTag => (
+                        <Link to={{
+                            pathname: "/member-landing",
+                            state: {
+                                segmentTag: CurrentTag
+                            }
+                        }}>
+                            <Badge
+                                color="primary">
+                                {CurrentTag}
+                            </Badge>
+                        </Link>
+                    ))}
                     <hr />
                     <h4 className={classes.title}>Segment</h4>
-                    {member.categories.segment&&member.categories.segment.map(CurrentTag => (
-                        <Badge color="info">{CurrentTag}</Badge>
+                    {member.categories.segment && member.categories.segment.map(CurrentTag => (
+                        <Link to={{
+                            pathname: "/member-landing",
+                            state: {
+                                segmentTag: CurrentTag
+                            }
+                        }}>
+                            <Badge
+                                color="info">
+                                {CurrentTag}
+                            </Badge>
+                        </Link>
                     ))}
 
 
                     <hr />
                     <h4 className={classes.title}>Solving these problems</h4>
-                    {member.categories.challenges&&member.categories.challenges.map(CurrentTag => (
-                        <Badge color="success">{CurrentTag}</Badge>
-                    )) }
+                    {member.categories.challenges && member.categories.challenges.map(CurrentTag => (
+
+                        <Link to={{
+                            pathname: "/member-landing",
+                            state: {
+                                segmentTag: CurrentTag
+                            }
+                        }}>
+                            <Badge
+                                color="success">
+                                {CurrentTag}
+                            </Badge>
+                        </Link>
+
+                    ))}
                 </GridItem>
             </GridContainer>
         );
