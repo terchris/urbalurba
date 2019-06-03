@@ -491,7 +491,6 @@ categoryRef.doc().set(
     }  
 );
 
-*/
 
 categoryRef.doc().set(
     {
@@ -1050,7 +1049,114 @@ categoryRef.doc().set(
     
 );
 
+*/
+
+
+
+categoryRef.doc().set(
+    {
+        "displayName": "Organisasjonstype",
+        "image": {
+            "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-logo-large.png",
+            "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-logo-medium.png",
+            "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-logo-small.jpg"
+        },
+        "categoryItems": [
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-priv-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-priv-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-priv-small.jpg"
+                },
+                "sortOrder": 1,
+                "summary": "Private bedrifter",
+                "idName": "private",
+                "displayName": "Private bedrifter",
+                "article": "Private bedrifter"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-municip-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-municip-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-municip-small.jpg"
+                },
+                "sortOrder": 2,
+                "summary": "Kommuner og kommunale foretak",
+                "idName": "municipality",
+                "displayName": "Kommune",
+                "article": "Kommuner og kommunale foretak"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-gov-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-gov-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-gov-small.jpg"
+                },
+                "sortOrder": 3,
+                "summary": "Statlige organisasjoner",
+                "idName": "government",
+                "displayName": "Statlig",
+                "article": "Statlige organisasjoner"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-assoc-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-assoc-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-assoc-small.jpg"
+                },
+                "sortOrder": 4,
+                "summary": "Organisasjoner",
+                "idName": "association",
+                "displayName": "Organisasjoner",
+                "article": "Organisasjoner"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-civil-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-civil-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-civil-small.jpg"
+                },
+                "sortOrder": 5,
+                "summary": "Frivillige organisasjoner",
+                "idName": "civil_society_ngo",
+                "displayName": "Frivillige organisasjoner",
+                "article": "Frivillige organisasjoner"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-acad-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-acad-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-acad-small.jpg"
+                },
+                "sortOrder": 6,
+                "summary": "Akademia",
+                "idName": "academia",
+                "displayName": "Akademia",
+                "article": "Akademia"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/orgtype/orgtype-research-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/orgtype/orgtype-research-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/orgtype/orgtype-research-small.jpg"
+                },
+                "sortOrder": 7,
+                "summary": "Forskning",
+                "idName": "research",
+                "displayName": "Forskning",
+                "article": "Forskning"
+            }
+        ],
+        "summary": "Types of organizations",
+        "idName": "organizationType",
+        "choice": "single"
+    }
+ 
+);
+
+
 /*
+
 categoryRef.doc().set(
     {
         "displayName": "BREAM-NOR",
@@ -1105,103 +1211,4 @@ categoryRef.doc().set(
 );
         
 
-categoryRef.doc().set(
-    {
-        "displayName": "Organisasjonstype",
-        "image": {
-            "large": "",
-            "medium": "",
-            "small": ""
-        },
-        "categoryItems": [
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 1,
-                "summary": "Private bedrifter",
-                "idName": "private",
-                "displayName": "Private bedrifter",
-                "article": "Private bedrifter"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 2,
-                "summary": "Kommuner og kommunale foretak",
-                "idName": "municipality",
-                "displayName": "Kommune",
-                "article": "Kommuner og kommunale foretak"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 3,
-                "summary": "Statlige organisasjoner",
-                "idName": "government",
-                "displayName": "Statlig",
-                "article": "Statlige organisasjoner"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 4,
-                "summary": "Organisasjoner",
-                "idName": "association",
-                "displayName": "Organisasjoner",
-                "article": "Organisasjoner"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 5,
-                "summary": "Frivillige organisasjoner",
-                "idName": "civil_society_ngo",
-                "displayName": "Frivillige organisasjoner",
-                "article": "Frivillige organisasjoner"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 6,
-                "summary": "Akademia",
-                "idName": "academia",
-                "displayName": "Akademia",
-                "article": "Akademia"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 7,
-                "summary": "Forskning",
-                "idName": "research",
-                "displayName": "Forskning",
-                "article": "Forskning"
-            }
-        ],
-        "summary": "Types of organizations",
-        "idName": "organizationType",
-        "choice": "single"
-    }    
-);
 */
