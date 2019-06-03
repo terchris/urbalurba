@@ -20,11 +20,25 @@ class MemberLandingPage extends React.Component {
         document.body.scrollTop = 0;
     }
     render() {
-       console.log("Ora ci Siamo Shaba!!!")
-   console.log(this.props.location.state.item)
+        console.log("Ora ci Siamo Shaba!!!")
+        // console.log(this.props.location.state.item)
 
-    const orgType =this.props.location.state.item;
-    const segmentTag =this.props.location.state.segmentTag;
+        let orgType = ""
+        let segmentTag = ""
+        let sdgTag = ""
+        let challengesTag = ""
+
+        /**
+         * Check to make sure which User case is being used 
+         * e.g user uses member-profile directly
+         */
+
+        if (this.props.location.state) {
+            orgType = this.props.location.state.item;
+            segmentTag = this.props.location.state.segmentTag;
+            sdgTag = this.props.location.state.sdgTag;
+            challengesTag = this.props.location.state.challengesTag;
+        }
         const { classes, ...rest } = this.props;
         const imageClasses = classNames(
             classes.imgRaised,
@@ -34,7 +48,7 @@ class MemberLandingPage extends React.Component {
         return (
             <div>
                 <MemberTop />
-                <MemberGrid organization={orgType} segmentTag={segmentTag}/>
+                <MemberGrid organization={orgType} segmentTag={segmentTag} challengesTag={challengesTag} sdgTag={sdgTag} />
                 <MemberFooter />
             </div>
         );
