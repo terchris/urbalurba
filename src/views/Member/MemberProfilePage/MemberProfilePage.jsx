@@ -126,7 +126,7 @@ class MemberProfilePage extends React.Component {
                     {member.summary}
                   </p>
                 </div>
-                <SDGGrid sdg={member.categories.sdg} />
+                <SDGGrid sdg={member.categories.SDG} />
                 <MemberTeamSection member={member} />
               
               </GridItem>

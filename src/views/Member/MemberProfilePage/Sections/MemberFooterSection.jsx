@@ -15,8 +15,7 @@ import BusinessCenter from "@material-ui/icons/BusinessCenter";
 
 class MemberFooterSection extends React.Component {
   render() {
-    const { classes, ...rest } = this.props;
-    const { member } = this.props;
+    const { classes, member, ...rest } = this.props;
 
     return (
       <div>

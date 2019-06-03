@@ -15,7 +15,7 @@ class SDGimage extends React.Component {
     let sdgAlt = "none";
 
     if (sdgNumber != null) {
-      sdgURL = "http://bucket.urbalurba.com/sdg/sdg-logo-" + sdgNumber + ".png";
+      sdgURL = "http://bucket.urbalurba.com/cat/sdg/sdg-logo-" + sdgNumber + ".png";
       sdgAlt = "SDG number " + sdgNumber;
     }
 

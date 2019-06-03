@@ -9,25 +9,20 @@ import overviewStyle from "assets/jss/material-kit-pro-react/views/presentationS
 // App resources
 import SDGimage from "../SharedSection/SDGimage.jsx";
 
-class SDGGirid extends React.Component {
-  render() {
-    const { classes } = this.props;
-    const { sdg } = this.props;
+function SDGGirid({ ...props }) {
+  const { classes, sdg, ...rest } = props;
 
-    if (!sdg) {
-      return null; //just retur nohing if there is no values to display
-    }
-
-    return (
-      <div className={classes.ourClients}>
-        <GridContainer justify="center">
-          {sdg.map(CurrentSDG => (
-            <SDGimage sdgNumber={CurrentSDG} />
-          ))}
-        </GridContainer>
-      </div>
-    );
+  if (!sdg) {
+    return null; //just retur nohing if there is no values to display
   }
+  return (
+    <div className={classes.ourClients}>
+      <GridContainer justify="center">
+        {sdg.map(CurrentSDG => (
+          <SDGimage sdgNumber={CurrentSDG} />
+        ))}
+      </GridContainer>
+    </div>
+  );
 }
-
 export default withStyles(overviewStyle)(SDGGirid);
