@@ -34,13 +34,7 @@ class MemberFooterSection extends React.Component {
               <GridItem md={3} sm={3} className={classes.mlAuto}>
                 <InfoArea
                   className={classes.info}
-                  title={member.main_adddress}
-                  description={
-                    <p>
-                      0160 Oslo,
-                      <br /> Norway
-                    </p>
-                  }
+                  title={member.location.shippingAddress}
                   icon={PinDrop}
                   iconColor="primary"
                 />
@@ -48,11 +42,7 @@ class MemberFooterSection extends React.Component {
               <GridItem md={2} sm={2} className={classes.mlAuto}>
                 <InfoArea
                   className={classes.info}
-                  title="930 01 000"
-                  description={<p>
-                  {member.contact_name}<br/>
-                  {member.contact_title}
-                  </p>}
+                  title={member.phone}
                   icon={Phone}
                   iconColor="primary"
                 />

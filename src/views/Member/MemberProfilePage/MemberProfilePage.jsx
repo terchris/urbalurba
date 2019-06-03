@@ -181,7 +181,7 @@ class MemberProfilePage extends React.Component {
               ]}
             /> : null}  
 
-            <MemberTeamSection />
+            <MemberTeamSection member={member} />
             <MemberFooterSection member={member} />
             <Clearfix />
           </div>
