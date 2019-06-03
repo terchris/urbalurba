@@ -36,8 +36,6 @@ import { getMembers } from '../../../redux/actions/memberActions'
 import fire from "db/fire.js";
 const db = fire.firestore();
 
-import { tmpdir } from "os";
-
 
 class MemberProfilePage extends React.Component {
   constructor(props){
@@ -128,7 +126,7 @@ class MemberProfilePage extends React.Component {
                     {member.summary}
                   </p>
                 </div>
-                <SDGGrid sdg={member.sustainable_development_goals} />
+                <SDGGrid sdg={member.categories.sdg} />
               </GridItem>
 
               <GridItem xs={12} sm={12} md={2}>

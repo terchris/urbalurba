@@ -30,11 +30,11 @@ class MemberTagsSection extends React.Component {
             <GridContainer>
                 <GridItem>
                     <h4 className={classes.title}>Member tags</h4>
-                    {member.sdg && member.sdg.map(CurrentTag => (
+                    {member.categories.sdg && member.categories.sdg.map(CurrentTag => (
                         <Link to={{
                             pathname: "/member-landing",
                             state: {
-                                segmentTag: CurrentTag
+                                sdgTag: CurrentTag
                             }
                         }}>
                             <Badge
@@ -67,7 +67,7 @@ class MemberTagsSection extends React.Component {
                         <Link to={{
                             pathname: "/member-landing",
                             state: {
-                                segmentTag: CurrentTag
+                                challengesTag: CurrentTag
                             }
                         }}>
                             <Badge
