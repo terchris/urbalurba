@@ -1049,7 +1049,7 @@ categoryRef.doc().set(
     
 );
 
-*/
+
 
 
 
@@ -1155,7 +1155,7 @@ categoryRef.doc().set(
 );
 
 
-/*
+*/
 
 categoryRef.doc().set(
     {
@@ -1211,4 +1211,3 @@ categoryRef.doc().set(
 );
         
 
-*/

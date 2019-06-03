@@ -29,7 +29,7 @@ class MemberFooterSection extends React.Component {
           <div className={classes.container}>
             <GridContainer>
               <GridItem sm={2} md={2}>
-                <img src={member.image_display_url} width="200" alt="logo" />
+                <img src={member.image.medium} width="200" alt="logo" />
               </GridItem>
               <GridItem md={3} sm={3} className={classes.mlAuto}>
                 <InfoArea
