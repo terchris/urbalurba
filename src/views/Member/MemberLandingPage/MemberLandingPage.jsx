@@ -24,6 +24,7 @@ class MemberLandingPage extends React.Component {
    console.log(this.props.location.state.item)
 
     const orgType =this.props.location.state.item;
+    const segmentTag =this.props.location.state.segmentTag;
         const { classes, ...rest } = this.props;
         const imageClasses = classNames(
             classes.imgRaised,
@@ -33,7 +34,7 @@ class MemberLandingPage extends React.Component {
         return (
             <div>
                 <MemberTop />
-                <MemberGrid organization={orgType}/>
+                <MemberGrid organization={orgType} segmentTag={segmentTag}/>
                 <MemberFooter />
             </div>
         );

@@ -28,40 +28,95 @@ import MemberSolutionSection from "./Sections/MemberSolutionSection.jsx";
 import MemberSummarySection from "./Sections/MemberSummarySection.jsx";
 import MemberProjectSection from "./Sections/MemberProjectSection.jsx";
 import MemberFooterSection from "./Sections/MemberFooterSection.jsx";
+import {compose} from "redux";
+import { connect } from 'react-redux'
+import { getMembers } from '../../../redux/actions/memberActions'
 
+// firebase imports
+import fire from "db/fire.js";
+const db = fire.firestore();
+
+import { tmpdir } from "os";
 
 
 class MemberProfilePage extends React.Component {
-  componentDidMount() {
-    window.scrollTo(0, 0);
+  constructor(props){
+    super(props)
+    this.state={
+      organization:[],
+      orgLoading:true
+    }
+  }
+
+   componentDidMount() {
+    // this.getSegmentOrChallenge()
+    //urlOrg is when an Organisation is searched by writing it straight as part of URL
+    const urlOrg = this.props.match.params.urlOrg
+
+    // Check whether user is coming from just short URL with 
+    //company name or through the HomePage
+    if(urlOrg)
+    { 
+      this.getSingleOrganization(urlOrg)
+    }
+    else
+    {
+      this.setState({
+        organization:this.props.location.state.item,
+        orgLoading:false
+      })
+    }
+
+   window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }
+
+  getSingleOrganization=(urlOrg)=>{
+   
+    const tempArr=[]
+    db.collection("catalog_organisation").where("idName", "==", urlOrg).get()
+    .then(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            // doc.data() is never undefined for query doc snapshots
+            tempArr.push(doc.data())
+        });
+    }).then(()=>{
+      this.setState({
+          organization:tempArr[0],
+          orgLoading:false
+        })
+    })
+    .catch(function(error) {
+        console.log("Error getting documents: ", error);
+    });
+  }
+
+
   render() {
+
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(
       classes.imgRaised,
       classes.imgFluid
     );
 
-    const member = this.props.location.state.item;
-    return (
+    const member=this.state.organization
+   if (this.state.orgLoading===false){ return (
       <div>
 
-        <MemberHeaderSection />
-        <div className={classNames(classes.main, classes.mainRaised)}>
+       <MemberHeaderSection />
+         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <GridContainer justify="center">
               <GridItem xs={12} sm={12} md={6}>
                 <div className={classes.memberLogo}>
                   <div>
                     <img src={member.image.medium} alt="logo" className={imageClasses} />
-
                   </div>
                   <div className={classes.name}>
                     <h1 className={classes.title}>{member.displayName}</h1>
                     <h3>{member.slogan}</h3>
                   </div>
-
                 </div>
               </GridItem>
             </GridContainer>
@@ -73,22 +128,18 @@ class MemberProfilePage extends React.Component {
                     {member.summary}
                   </p>
                 </div>
-
                 <SDGGrid sdg={member.sustainable_development_goals} />
-
               </GridItem>
 
               <GridItem xs={12} sm={12} md={2}>
-
                 <MemberTagsSection member={member} />
-
               </GridItem>
-            </GridContainer>
+            </GridContainer> 
 
             {/**Condition for rendering to be put around nav pils.. 
-          should only show for acando */}
+           should only show for acando*/}
 
-            {(member.displayName == "acando" || member.displayName == "Acando") ? <NavPills
+             {(member.displayName == "acando" || member.displayName == "Acando") ? <NavPills
               alignCenter
               color="primary"
               tabs={[
@@ -128,18 +179,47 @@ class MemberProfilePage extends React.Component {
                   )
                 }
               ]}
-            /> : null}
+            /> : null}  
 
             <MemberTeamSection />
             <MemberFooterSection member={member} />
             <Clearfix />
           </div>
-        </div>
+        </div>);
+      
+            //})}  
+            }
         <MemberFooter />
       </div>
 
-    );
+    );} else{
+      return (
+<div>Loading.......</div>
+      );
+    }
   }
 }
 
-export default withStyles(memberPageStyle)(MemberProfilePage);
+//Redux Map actions to change Global state to 
+//properties of this Component
+const mapDispatchToProps = dispatch => {
+  return {
+    getMembers: (member) => dispatch(getMembers(member))
+  }
+}
+
+//Redux Map Global state to 
+//properties of this Component
+const mapStateToProps = (state, ownProps) => {
+  
+  console.log("lets see Redux");
+   console.log(state.members);
+  return {
+    members:state.members
+  }
+}
+
+export default compose(
+  withStyles(memberPageStyle),
+  connect(mapStateToProps,mapDispatchToProps),
+)(MemberProfilePage);
