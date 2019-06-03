@@ -127,12 +127,17 @@ class MemberProfilePage extends React.Component {
                   </p>
                 </div>
                 <SDGGrid sdg={member.categories.sdg} />
+                <MemberTeamSection member={member} />
+              
               </GridItem>
+
 
               <GridItem xs={12} sm={12} md={2}>
                 <MemberTagsSection member={member} />
               </GridItem>
             </GridContainer> 
+
+            
 
             {/**Condition for rendering to be put around nav pils.. 
            should only show for acando*/}
@@ -179,7 +184,7 @@ class MemberProfilePage extends React.Component {
               ]}
             /> : null}  
 
-            <MemberTeamSection />
+
             <MemberFooterSection member={member} />
             <Clearfix />
           </div>

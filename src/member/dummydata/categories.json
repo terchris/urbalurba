@@ -1111,10 +1111,11 @@
     {
         "displayName": "BREAM-NOR",
         "image": {
-            "large": "",
-            "medium": "",
-            "small": ""
+            "large": "http://bucket.urbalurba.com/cat/bream-nor/segment-energy-large.png",
+            "medium": "http://bucket.urbalurba.com/cat/segment/segment-energy-medium.png",
+            "small": "http://bucket.urbalurba.com/cat/segment/segment-energy-small.png"
         },
+
         "categoryItems": [
             {
                 "image": {
