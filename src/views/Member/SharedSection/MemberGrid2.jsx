@@ -21,7 +21,7 @@ import fire from "db/fire.js";
 
 
 
-class MemberGrid extends React.Component {
+class MemberGrid2 extends React.Component {
 
   constructor(props) {
     super(props)
@@ -165,7 +165,7 @@ getSegment=(event)=>{
             </div>
             <GridContainer>
               {this.state.orgsDisplayed.map(CurrentMember => (
-               <MemberCard2 key={CurrentMember.displayName} orgMembers={"orgtypeCheck"} members={CurrentMember} /> 
+               <MemberCard2 key={CurrentMember.displayName} member={CurrentMember} /> 
 
               ))}
             </GridContainer>
@@ -203,4 +203,4 @@ const mapStateToProps = (state, ownProps) => {
 export default compose(
   withStyles(memberPageStyle),
   connect(mapStateToProps,mapDispatchToProps),
-)(MemberGrid);
+)(MemberGrid2);

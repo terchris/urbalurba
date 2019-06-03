@@ -1,5 +1,5 @@
 /**
- * For displaying one members card
+ * For displaying one category card
  * 
  */
 /* eslint-disable */
@@ -23,7 +23,7 @@ import CardFooter from "components/Card/CardFooter.jsx";
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 
-class MemberCard2 extends React.Component {
+class MemberCard extends React.Component {
   render() {
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(
@@ -31,32 +31,37 @@ class MemberCard2 extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { member} = this.props;
-    let image = member.image.medium;
+    const { members, orgMembers, orgType, orgCount, image } = this.props;
     return (
       <GridItem xs={12} sm={4} md={4}>
         <Card profile>
           <CardHeader image>
             <a href="#pablo" onClick={e => e.preventDefault()}>
-              <img src={image} alt="{member.displayName}" />
+              <img src={image} alt="logo" />
               <div className={classes.cardTitleAbsolute}>
-              {member.displayName}
-            </div>
+                {(orgMembers) ? members.displayName : orgCount + " Of " + orgType}
+              </div>
             </a>
-
+            <div
+              className={classes.coloredShadow}
+              style={{
+                backgroundImage: `url(${image})`,
+                opacity: "1"
+              }}
+            />
           </CardHeader>
           <CardBody>
             <Info>
-              <h6 className={classes.cardCategory}>{member.slogan}</h6>
+              <h6 className={classes.cardCategory}>{(orgMembers) ? members.slogan : orgType}</h6>
             </Info>
-
-          </CardBody>
-          <CardFooter
-            profile
-            className={classes.justifyContentCenter}
-          >
-                          <Link to={{
-              pathname: "/member-landing2",
+            <p className={classes.cardDescription}>
+              {(orgMembers) ? members.summary : orgType}
+            </p>
+            <Link to={{
+              pathname: (orgMembers) ? "/member-profile" : "/member-landing2",
+              state: {
+                item: (orgMembers) ? members : orgType
+              }
             }}>
               <Button
                 color="rose"
@@ -64,19 +69,21 @@ class MemberCard2 extends React.Component {
                 className={classes.navButton}
                 round
               >
-                Member profile
+                se member
                   </Button>
             </Link>
-
+          </CardBody>
+          <CardFooter
+            profile
+            className={classes.justifyContentCenter}
+          >
             <Button justIcon simple color="twitter">
               <i className="fab fa-twitter" />
             </Button>
             <Button justIcon simple color="dribbble">
               <i className="fab fa-dribbble" />
             </Button>
-            <Button justIcon simple color="instagram">
-              <i className="fab fa-instagram" />
-            </Button>
+
           </CardFooter>
         </Card>
       </GridItem>
@@ -85,4 +92,4 @@ class MemberCard2 extends React.Component {
 
 
 }
-export default withStyles(memberPageStyle)(MemberCard2);
+export default withStyles(memberPageStyle)(MemberCard);
