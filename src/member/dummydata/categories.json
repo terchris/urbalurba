@@ -219,61 +219,244 @@
     {
         "displayName": "Segments",
         "image": {
-            "large": "",
-            "medium": "",
-            "small": ""
+            "large": "http://bucket.urbalurba.com/cat/segment/segment-logo-large.png",
+            "medium": "http://bucket.urbalurba.com/cat/segment/segment-logo-medium.png",
+            "small": "http://bucket.urbalurba.com/cat/segment/segment-logo-small.jpg"
         },
         "categoryItems": [
             {
                 "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-energy-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-energy-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-energy-small.png"
                 },
                 "sortOrder": 1,
-                "summary": "Mobilitetsløsninger",
-                "idName": "mobility",
-                "displayName": "Mobility",
-                "article": "Løsninger for transport av mennesker og varer"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 2,
-                "summary": "Avfallshåndtering",
-                "idName": "waste",
-                "displayName": "Waste",
-                "article": "Løsninger og virksomheter innen håndtering av avfall"
-            },
-            {
-                "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
-                },
-                "sortOrder": 3,
                 "summary": "Energi",
-                "idName": "energy",
+                "idName": "Energy",
                 "displayName": "Energy",
                 "article": "Løsninger og virksomheter innen energi"
             },
             {
                 "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-wather-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-wather-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-wather-small.png"
+                },
+                "sortOrder": 2,
+                "summary": "Løsninger for håndtering av vann",
+                "idName": "Wather",
+                "displayName": "Wather",
+                "article": "Løsninger for håndtering av vann"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-air-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-air-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-air-small.png"
+                },
+                "sortOrder": 3,
+                "summary": "Luft og luftkvalitet",
+                "idName": "Air",
+                "displayName": "Air",
+                "article": "Luft og luftkvalitet"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-mobility-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-mobility-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-mobility-small.png"
                 },
                 "sortOrder": 4,
+                "summary": "Mobilitetsløsninger",
+                "idName": "Mobility",
+                "displayName": "Mobility",
+                "article": "Løsninger for transport av mennesker og varer"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-health-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-health-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-health-small.png"
+                },
+                "sortOrder": 5,
+                "summary": "Helse",
+                "idName": "Health",
+                "displayName": "Health",
+                "article": "Helse"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-waste-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-waste-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-waste-small.png"
+                },
+                "sortOrder": 6,
+                "summary": "Avfallshåndtering",
+                "idName": "Waste",
+                "displayName": "Waste",
+                "article": "Løsninger og virksomheter innen håndtering av avfall"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-telco_soft-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-telco_soft-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-telco_soft-small.png"
+                },
+                "sortOrder": 7,
+                "summary": "Telekommunikasjon og programvare",
+                "idName": "Telecom and Software",
+                "displayName": "Telecom and Software",
+                "article": "Telekommunikasjon og programvare"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-food_agri-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-food_agri-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-food_agri-small.png"
+                },
+                "sortOrder": 8,
+                "summary": "Mat og landbruk",
+                "idName": "Food and Agriculture",
+                "displayName": "Food and Agriculture",
+                "article": "Mat og landbruk"
+            },                        
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-tourism-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-tourism-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-tourism-small.png"
+                },
+                "sortOrder": 9,
                 "summary": "Turisme",
-                "idName": "4",
-                "displayName": "tourism",
+                "idName": "Tourism",
+                "displayName": "Tourism",
                 "article": "Turisme"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-build_costr-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-build_costr-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-build_costr-small.png"
+                },
+                "sortOrder": 10,
+                "summary": "Building and Construction",
+                "idName": "Building and Construction",
+                "displayName": "Building and Construction",
+                "article": "Building and Construction"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-security-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-security-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-security-small.png"
+                },
+                "sortOrder": 11,
+                "summary": "Security",
+                "idName": "Security",
+                "displayName": "Security",
+                "article": "Security"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-education-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-education-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-education-small.png"
+                },
+                "sortOrder": 12,
+                "summary": "Education",
+                "idName": "Education",
+                "displayName": "Education",
+                "article": "Education"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-bio_nat-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-bio_nat-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-bio_nat-small.png"
+                },
+                "sortOrder": 13,
+                "summary": "Bio and Natural Resources",
+                "idName": "Bio and Natural Resources",
+                "displayName": "Bio and Natural Resources",
+                "article": "Bio and Natural Resources"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-finance-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-finance-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-finance-small.png"
+                },
+                "sortOrder": 14,
+                "summary": "Finance",
+                "idName": "Finance",
+                "displayName": "Finance",
+                "article": "Finance"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-ocean-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-ocean-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-ocean-small.png"
+                },
+                "sortOrder": 15,
+                "summary": "Ocean Industries",
+                "idName": "Ocean Industries",
+                "displayName": "Ocean Industries",
+                "article": "Ocean Industries"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-trade-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-trade-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-trade-small.png"
+                },
+                "sortOrder": 16,
+                "summary": "Trade",
+                "idName": "Trade",
+                "displayName": "Trade",
+                "article": "Trade"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-hospitality-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-hospitality-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-hospitality-small.png"
+                },
+                "sortOrder": 17,
+                "summary": "Hospitality",
+                "idName": "Hospitality",
+                "displayName": "Hospitality",
+                "article": "Hospitality"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-sport_rec-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-sport_rec-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-sport_rec-small.png"
+                },
+                "sortOrder": 18,
+                "summary": "Sport and recreation",
+                "idName": "Sport and recreation",
+                "displayName": "Sport and recreation",
+                "article": "Sport and recreation"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/segment/segment-consulting-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/segment/segment-consulting-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/segment/segment-consulting-small.png"
+                },
+                "sortOrder": 19,
+                "summary": "Consulting",
+                "idName": "Consulting",
+                "displayName": "Consulting",
+                "article": "Consulting"
             }
+
+
+
         ],
-        "summary": "The different segments that adressed",
+        "summary": "The different segments that are adressed",
         "idName": "segment",
         "choice": "multiple"
     },
