@@ -19,9 +19,6 @@ import { getMembers } from '../../../redux/actions/memberActions'
 import fire from "db/fire.js";
 const db = fire.firestore();
 
-
-
-
 class MemberGrid extends React.Component {
 
   constructor(props) {
@@ -33,14 +30,26 @@ class MemberGrid extends React.Component {
       organs: [],
       orgsDisplayed: [],
       filterItem: this.props.organization,
-      segmentTag: this.props.segmentTag
+      segmentTag: this.props.segmentTag,
+      challengesTag: this.props.challengesTag,
+      sdgTag: this.props.sdgTag
       //searched
     }
   }
   componentDidMount() {
     let segmentTag = this.state.segmentTag
+    let challengesTag = this.props.challengesTag
+    let sdgTag = this.props.sdgTag
+    let member = this.state.member
+    
     if (segmentTag) {
-      this.getSegmentOrChallenge(segmentTag)
+      this.getOrgBySegment(segmentTag)
+    }
+    else if (challengesTag) {
+      this.getOrgByChallenge(challengesTag)
+    }
+    else if(!member){
+        this.getMembersFirebase()
     }
     else {
       this.getOrgs()
@@ -95,7 +104,11 @@ class MemberGrid extends React.Component {
     // this.props.getFilteredOrgs(orgtype)
   }
 
-  getSegmentOrChallenge = (check) => {
+
+  /**
+   * GEt Organizations by SegmentTag
+   */
+    getOrgBySegment = (check) => {
     //coolection where
     const tempArr = []
     console.log("From Challenge")
@@ -125,6 +138,85 @@ class MemberGrid extends React.Component {
         console.log("Error getting documents: ", error);
       });
   }
+
+    /**
+   * GEt Organizations by ChallengesTag
+   */
+  getOrgByChallenge = (check) => {
+    //coolection where
+    const tempArr = []
+    console.log("From Challenge")
+    db.collection("catalog_organisation").get()
+      .then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+
+          if (doc.data().categories.challenges) {
+            let arr = doc.data().categories.challenges
+            if (arr.includes(check)) {
+              tempArr.push(doc.data())
+            }
+            else { console.log("Niente") }
+          }
+
+          else { console.log("No Segment For", doc.data().displayName) }
+        });
+
+      }).then(() => {
+        this.setState({
+          isLoading: false,
+          orgsDisplayed: tempArr,
+
+        })
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
+  }
+
+
+
+/**
+ * GEt All Orgs in case of User case of using member-profile URL
+ */
+  getMembersFirebase = () => {
+   // const db = fire.firestore();
+    let organization=[];
+    let orgArray=[];
+    let orgTypeArr=[]
+   
+    
+    db.collection('catalog_organisation').get()
+    .then((snapshot) => {       
+      snapshot.forEach((doc) => {
+        // Ebe. Here is the data. How to get it into the right structure I leave to you 
+      
+        organization.push(doc.data())
+        //Get all organizationType from Firebase Organizations
+  
+        //Terje. this would be best if it returned just a string instead of an array,
+        // Perhaps we could look into it. I'm not sure how much time that will take
+        if(doc.data().categories.organizationType){
+          orgArray.push(doc.data().categories.organizationType)
+        }
+      });
+      
+      // send organizations to Global State(Redux)
+      this.props.getMembers(organization);
+  
+     // let orgTypes=this.getCatCount(orgArray);
+  
+      this.setState({
+        organs: organization,
+        isLoading: false,
+        orgsDisplayed: organization,
+  
+      })
+    })
+    .catch((err) => {
+      console.log('Error getting documents', err);
+    });
+  }
+  
 
   getOrgs = () => {
     let members = this.state.members;
@@ -192,7 +284,7 @@ class MemberGrid extends React.Component {
 const mapDispatchToProps = dispatch => {
   //const { members } = this.props.location.state;
   return {
-    //getMembers: (member) => dispatch(getMembers(member)),
+    getMembers: (member) => dispatch(getMembers(member)),
     // getFilteredOrgs: (orgType) => dispatch(getFilteredOrgs(orgType))
   }
 }
