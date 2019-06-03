@@ -319,7 +319,7 @@
                 "idName": "Food and Agriculture",
                 "displayName": "Food and Agriculture",
                 "article": "Mat og landbruk"
-            },                        
+            },
             {
                 "image": {
                     "large": "http://bucket.urbalurba.com/cat/segment/segment-tourism-large.png",
@@ -452,9 +452,6 @@
                 "displayName": "Consulting",
                 "article": "Consulting"
             }
-
-
-
         ],
         "summary": "The different segments that are adressed",
         "idName": "segment",
@@ -463,46 +460,550 @@
     {
         "displayName": "Challenges",
         "image": {
-            "large": "",
-            "medium": "",
-            "small": ""
+            "large": "http://bucket.urbalurba.com/cat/challenges/challenges-logo-large.png",
+            "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-logo-medium.png",
+            "small": "http://bucket.urbalurba.com/cat/challenges/challenges-logo-small.jpg"
         },
         "categoryItems": [
             {
                 "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_data_coll-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_data_coll-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_data_coll-small.jpg"
                 },
                 "sortOrder": 1,
+                "summary": "Enhanced data collection",
+                "idName": "Enhanced data collection",
+                "displayName": "Enhanced data collection",
+                "article": "Enhanced data collection"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-fast_data-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-fast_data-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-fast_data-small.jpg"
+                },
+                "sortOrder": 2,
+                "summary": "Faster data transfer",
+                "idName": "Faster data transfer",
+                "displayName": "Faster data transfer",
+                "article": "Faster data transfer"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_data-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_data-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_data-small.jpg"
+                },
+                "sortOrder": 3,
+                "summary": "Improved data accessibility",
+                "idName": "Improved data accessibility",
+                "displayName": "Improved data accessibility",
+                "article": "Improved data accessibility"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_data-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_data-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_data-small.jpg"
+                },
+                "sortOrder": 4,
+                "summary": "Increased data transparency",
+                "idName": "Increased data transparency",
+                "displayName": "Increased data transparency",
+                "article": "Increased data transparency"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_data_sec-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_data_sec-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_data_sec-small.jpg"
+                },
+                "sortOrder": 5,
+                "summary": "Enhanced data security",
+                "idName": "Enhanced data security",
+                "displayName": "Enhanced data security",
+                "article": "Enhanced data security"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_trav_sec-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_trav_sec-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_trav_sec-small.jpg"
+                },
+                "sortOrder": 6,
+                "summary": "Improving travel safety",
+                "idName": "Improving travel safety",
+                "displayName": "Improving travel safety",
+                "article": "Improving travel safety"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_traf_man-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_traf_man-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_traf_man-small.jpg"
+                },
+                "sortOrder": 7,
+                "summary": "Improving traffic management",
+                "idName": "Improving traffic management",
+                "displayName": "Improving traffic management",
+                "article": "Improving traffic management"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_park-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_park-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_park-small.jpg"
+                },
+                "sortOrder": 8,
                 "summary": "Løsninger for bedre håndtering av parkering",
-                "idName": "improving_parking",
+                "idName": "Improving parking",
                 "displayName": "Improving parking",
                 "article": "Løsninger for bedre håndtering av parkering"
             },
             {
                 "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_trav-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_trav-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_trav-small.jpg"
                 },
-                "sortOrder": 2,
-                "summary": "Redusere el regningen",
-                "idName": "reducing_energy_bills",
-                "displayName": "Reducing energy bills",
-                "article": "løsninger som kan redusere energi kostnad"
+                "sortOrder": 9,
+                "summary": "Reducing need for travel",
+                "idName": "Reducing need for travel",
+                "displayName": "Reducing need for travel",
+                "article": "Reducing need for travel"
             },
             {
                 "image": {
-                    "large": "",
-                    "medium": "",
-                    "small": ""
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-sust_transp-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-sust_transp-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-sust_transp-small.jpg"
                 },
-                "sortOrder": 3,
-                "summary": "Forbedre helsestell",
-                "idName": "improving_health_care",
-                "displayName": "Improving health care",
-                "article": "Løsninger for forbedret helsestell"
+                "sortOrder": 10,
+                "summary": "Promoting sustainable private transport models",
+                "idName": "Promoting sustainable private transport models",
+                "displayName": "Promoting sustainable private transport models",
+                "article": "Promoting sustainable private transport models"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_foss_transp-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_foss_transp-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_foss_transp-small.jpg"
+                },
+                "sortOrder": 11,
+                "summary": "Reducing use of fossils in public transport",
+                "idName": "Reducing use of fossils in public transport",
+                "displayName": "Reducing use of fossils in public transport",
+                "article": "Reducing use of fossils in public transport"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_pub_transp-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_pub_transp-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_pub_transp-small.jpg"
+                },
+                "sortOrder": 12,
+                "summary": "Improving public transport accessibility",
+                "idName": "Improving public transport accessibility",
+                "displayName": "Improving public transport accessibility",
+                "article": "Improving public transport accessibility"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_edu-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_edu-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_edu-small.jpg"
+                },
+                "sortOrder": 13,
+                "summary": "Improving education",
+                "idName": "Improving education",
+                "displayName": "Improving education",
+                "article": "Improving education"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_act_liv-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_act_liv-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_act_liv-small.jpg"
+                },
+                "sortOrder": 14,
+                "summary": "Promoting active living",
+                "idName": "Promoting active living",
+                "displayName": "Promoting active living",
+                "article": "Promoting active living"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_energy_eff-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_energy_eff-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_energy_eff-small.jpg"
+                },
+                "sortOrder": 15,
+                "summary": "Increasing energy efficiency of appliances",
+                "idName": "Increasing energy efficiency of appliances",
+                "displayName": "Increasing energy efficiency of appliances",
+                "article": "Increasing energy efficiency of appliances"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_waste-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_waste-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_waste-small.jpg"
+                },
+                "sortOrder": 16,
+                "summary": "Promoting sustainable disposal of waste",
+                "idName": "Promoting sustainable disposal of waste",
+                "displayName": "Promoting sustainable disposal of waste",
+                "article": "Promoting sustainable disposal of waste"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-rec_waste-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-rec_waste-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-rec_waste-small.jpg"
+                },
+                "sortOrder": 17,
+                "summary": "Recycling waste",
+                "idName": "Recycling waste",
+                "displayName": "Recycling waste",
+                "article": "Recycling waste"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_land-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_land-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_land-small.jpg"
+                },
+                "sortOrder": 18,
+                "summary": "Promoting sustainbable use of land",
+                "idName": "Promoting sustainbable use of land",
+                "displayName": "Promoting sustainbable use of land",
+                "article": "Promoting sustainbable use of land"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_soil_pol-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_soil_pol-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_soil_pol-small.jpg"
+                },
+                "sortOrder": 19,
+                "summary": "Reducing soil pollution",
+                "idName": "Reducing soil pollution",
+                "displayName": "Reducing soil pollution",
+                "article": "Reducing soil pollution"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_air_pol-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_air_pol-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_air_pol-small.jpg"
+                },
+                "sortOrder": 20,
+                "summary": "Reducing local air pollution",
+                "idName": "Reducing local air pollution",
+                "displayName": "Reducing local air pollution",
+                "article": "Reducing local air pollution"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_inv_cost-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_inv_cost-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_inv_cost-small.jpg"
+                },
+                "sortOrder": 21,
+                "summary": "Reducing investment costs",
+                "idName": "Reducing investment costs",
+                "displayName": "Reducing investment costs",
+                "article": "Reducing investment costs"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_sos_int-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_sos_int-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_sos_int-small.jpg"
+                },
+                "sortOrder": 22,
+                "summary": "Improving social integration",
+                "idName": "Improving social integration",
+                "displayName": "Improving social integration",
+                "article": "Improving social integration"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_life_qual-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_life_qual-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_life_qual-small.jpg"
+                },
+                "sortOrder": 23,
+                "summary": "Improving Life Quality",
+                "idName": "Improving Life Quality",
+                "displayName": "Improving Life Quality",
+                "article": "Improving Life Quality"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_safe-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_safe-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_safe-small.jpg"
+                },
+                "sortOrder": 24,
+                "summary": "Increasing Safety",
+                "idName": "Increasing Safety",
+                "displayName": "Increasing Safety",
+                "article": "Increasing Safety"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_health_care-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_health_care-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_health_care-small.jpg"
+                },
+                "sortOrder": 25,
+                "summary": "Improving Health Care",
+                "idName": "Improving Health Care",
+                "displayName": "Improving Health Care",
+                "article": "Improving Health Care"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_eld_care-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_eld_care-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_eld_care-small.jpg"
+                },
+                "sortOrder": 26,
+                "summary": "Improving Elderly Care",
+                "idName": "Improving Elderly Care",
+                "displayName": "Improving Elderly Care",
+                "article": "Improving Elderly Care"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_beh-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_beh-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-prom_sus_beh-small.jpg"
+                },
+                "sortOrder": 27,
+                "summary": "Promoting sustainable behavior",
+                "idName": "Promoting sustainable behavior",
+                "displayName": "Promoting sustainable behavior",
+                "article": "Promoting sustainable behavior"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-fac_citizen_eng-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-fac_citizen_eng-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-fac_citizen_eng-small.jpg"
+                },
+                "sortOrder": 28,
+                "summary": "Facilitating Citizen Engagement",
+                "idName": "Facilitating Citizen Engagement",
+                "displayName": "Facilitating Citizen Engagement",
+                "article": "Facilitating Citizen Engagement"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-lim_urb_spr-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-lim_urb_spr-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-lim_urb_spr-small.jpg"
+                },
+                "sortOrder": 29,
+                "summary": "Limiting Urban Sprawl",
+                "idName": "Limiting Urban Sprawl",
+                "displayName": "Limiting Urban Sprawl",
+                "article": "Limiting Urban Sprawl"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_ghg_emi-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_ghg_emi-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_ghg_emi-small.jpg"
+                },
+                "sortOrder": 30,
+                "summary": "Reducing GHG Emissions",
+                "idName": "Reducing GHG Emissions",
+                "displayName": "Reducing GHG Emissions",
+                "article": "Reducing GHG Emissions"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_shar_renew-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_shar_renew-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-inc_shar_renew-small.jpg"
+                },
+                "sortOrder": 31,
+                "summary": "Increasing share of renewables",
+                "idName": "Increasing share of renewables",
+                "displayName": "Increasing share of renewables",
+                "article": "Increasing share of renewables"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-dec_enery_build-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-dec_enery_build-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-dec_enery_build-small.jpg"
+                },
+                "sortOrder": 32,
+                "summary": "Decreasing energy consumption in buildings",
+                "idName": "Decreasing energy consumption in buildings",
+                "displayName": "Decreasing energy consumption in buildings",
+                "article": "Decreasing energy consumption in buildings"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_waste-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_waste-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_waste-small.jpg"
+                },
+                "sortOrder": 33,
+                "summary": "Reducing waste generation",
+                "idName": "Reducing waste generation",
+                "displayName": "Reducing waste generation",
+                "article": "Reducing waste generation"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_wather_pol-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_wather_pol-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_wather_pol-small.jpg"
+                },
+                "sortOrder": 34,
+                "summary": "Reducing water pollution",
+                "idName": "Reducing water pollution",
+                "displayName": "Reducing water pollution",
+                "article": "Reducing water pollution"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_energy_use_eff-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_energy_use_eff-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_energy_use_eff-small.jpg"
+                },
+                "sortOrder": 35,
+                "summary": "Improving Energy Usage Efficiency",
+                "idName": "Improving Energy Usage Efficiency",
+                "displayName": "Improving Energy Usage Efficiency",
+                "article": "Improving Energy Usage Efficiency"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_energy_sup_eff-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_energy_sup_eff-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_energy_sup_eff-small.jpg"
+                },
+                "sortOrder": 36,
+                "summary": "Improving Energy Supply Efficiency",
+                "idName": "Improving Energy Supply Efficiency",
+                "displayName": "Improving Energy Supply Efficiency",
+                "article": "Improving Energy Supply Efficiency"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-peak_ennergy_dem-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-peak_ennergy_dem-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-peak_ennergy_dem-small.jpg"
+                },
+                "sortOrder": 37,
+                "summary": "Shaving peak Energy Demand",
+                "idName": "Shaving peak Energy Demand",
+                "displayName": "Shaving peak Energy Demand",
+                "article": "Shaving peak Energy Demand"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_energy_bill-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_energy_bill-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_energy_bill-small.jpg"
+                },
+                "sortOrder": 38,
+                "summary": "Reducing energy bills",
+                "idName": "Reducing energy bills",
+                "displayName": "Reducing energy bills",
+                "article": "Reducing energy bills"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_grid_stab-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_grid_stab-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-enh_grid_stab-small.jpg"
+                },
+                "sortOrder": 39,
+                "summary": "Enhances Grid Stability",
+                "idName": "Enhances Grid Stability",
+                "displayName": "Enhances Grid Stability",
+                "article": "Enhances Grid Stability"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_fossil-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_fossil-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_fossil-small.jpg"
+                },
+                "sortOrder": 40,
+                "summary": "Reducing use of fossils",
+                "idName": "Reducing use of fossils",
+                "displayName": "Reducing use of fossils",
+                "article": "Reducing use of fossils"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-red_op_cost-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-red_op_cost-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-red_op_cost-small.jpg"
+                },
+                "sortOrder": 41,
+                "summary": "Reducing Operation Costs",
+                "idName": "Reducing Operation Costs",
+                "displayName": "Reducing Operation Costs",
+                "article": "Reducing Operation Costs"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_pers_eff-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_pers_eff-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-imp_pers_eff-small.jpg"
+                },
+                "sortOrder": 42,
+                "summary": "Improving personnel efficiency",
+                "idName": "Improving personnel efficiency",
+                "displayName": "Improving personnel efficiency",
+                "article": "Improving personnel efficiency"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-enc_dig_entr-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-enc_dig_entr-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-enc_dig_entr-small.jpg"
+                },
+                "sortOrder": 43,
+                "summary": "Encouraging digital entrepreneurship",
+                "idName": "Encouraging digital entrepreneurship",
+                "displayName": "Encouraging digital entrepreneurship",
+                "article": "Encouraging digital entrepreneurship"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-create_job-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-create_job-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-create_job-small.jpg"
+                },
+                "sortOrder": 44,
+                "summary": "Creating new jobs",
+                "idName": "Creating new jobs",
+                "displayName": "Creating new jobs",
+                "article": "Creating new jobs"
+            },
+            {
+                "image": {
+                    "large": "http://bucket.urbalurba.com/cat/challenges/challenges-enab_business-large.png",
+                    "medium": "http://bucket.urbalurba.com/cat/challenges/challenges-enab_business-medium.png",
+                    "small": "http://bucket.urbalurba.com/cat/challenges/challenges-enab_business-small.jpg"
+                },
+                "sortOrder": 45,
+                "summary": "Enabling new business opportunities",
+                "idName": "Enabling new business opportunities",
+                "displayName": "Enabling new business opportunities",
+                "article": "Enabling new business opportunities"
             }
         ],
         "summary": "Defines set of challenges ",
@@ -655,6 +1156,4 @@
         "idName": "organizationType",
         "choice": "single"
     }
-
-
 ]
