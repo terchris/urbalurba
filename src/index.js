@@ -33,7 +33,7 @@ import MemberHomePage from "./views/Member/MemberHomePage/MemberHomePage.jsx";
 
 import MemberHomePage2 from "./views/Member/MemberHomePage/MemberHomePage2";
 import MemberLandingPage2 from "./views/Member/MemberLandingPage/MemberLandingPage2.jsx";
-
+import HeaderTest from "./views/Member/testing/HeaderTest.jsx";
 
 var hist = createBrowserHistory();
 
@@ -67,6 +67,7 @@ ReactDOM.render(
           <Route path="/member-home" component={MemberHomePage} />
           <Route path="/member-home2" component={MemberHomePage2} />
           <Route path= "/member-landing2" component={MemberLandingPage2} /> 
+          <Route path= "/headertest" component={HeaderTest} /> 
           <Route path="/" component={MemberHomePage} />
       </Switch>
     </Router>

@@ -11,7 +11,7 @@ class SDGimage extends React.Component {
     const { classes } = this.props;
     const { sdgNumber } = this.props;
 
-    let sdgURL = "http://bucket.urbalurba.com/sdg/sdg-logo-3.png";
+    let sdgURL = "http://bucket.urbalurba.com/cat/sdg/sdg-logo-3.png";
     let sdgAlt = "none";
 
     if (sdgNumber != null) {

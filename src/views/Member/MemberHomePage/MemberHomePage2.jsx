@@ -13,7 +13,7 @@ import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 //changed to ver 2: import MemberCard from "views/Member/SharedSection/MemberCard.jsx";
 import CategoryCard2 from "views/Member/SharedSection/CategoryCard2.jsx";
 import MemberFooter from "views/Member/SharedSection/MemberFooter.jsx";
-import MemberTop from "views/Member/SharedSection/MemberTop.jsx";
+import MemberTop from "views/Member/SharedSection/MemberTop2.jsx";
 import {compose} from "redux";
 import { connect } from 'react-redux'
 import { getMembers } from '../../../redux/actions/memberActions'
