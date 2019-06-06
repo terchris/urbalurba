@@ -27,9 +27,10 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members, orgMembers, orgType, orgTypeImage } = this.props;
+    const { members, orgMembers, orgType, } = this.props;
 
-    let image=(orgTypeImage)?orgTypeImage.medium:members.image.medium
+    // orgType.images to be modified eventually when we get right data for images
+    let image = (orgType) ? orgType.images : members.image.medium
     return (
       <GridItem xs={12} sm={4} md={4}>
         <Card profile>
@@ -37,7 +38,7 @@ class MemberCard extends React.Component {
             <a href="#pablo" onClick={e => e.preventDefault()}>
               <img src={image} alt="logo" />
               <div className={classes.cardTitleAbsolute}>
-                {(orgMembers) ? members.displayName : orgType}
+                {(orgMembers) ? members.displayName : orgType.name}
               </div>
             </a>
             <div
@@ -50,10 +51,10 @@ class MemberCard extends React.Component {
           </CardHeader>
           <CardBody>
             <Info>
-              <h6 className={classes.cardCategory}>{(orgMembers) ? members.slogan : orgType}</h6>
+              <h6 className={classes.cardCategory}>{(orgMembers) ? members.slogan : orgType.name}</h6>
             </Info>
             <p className={classes.cardDescription}>
-              {(orgMembers) ? members.summary : orgType}
+              {(orgMembers) ? members.summary : orgType.name}
             </p>
             <Link to={{
               pathname: (orgMembers) ? `/org/${members.idName}` : "/member-landing",

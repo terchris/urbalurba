@@ -54,16 +54,15 @@ class MemberGrid extends React.Component {
       console.log(challengesTag)
       this.getOrgByChallenge(challengesTag)
     }
-    else if(member.length==0){
+    else if (member.length == 0) {
       console.log("URL User case")
-        this.getUrlMembers()
+      this.getUrlMembers()
     }
-    // else {
-    //   this.getOrgs()
-    // }
     // //this.getArraySeg()
-    else{ console.log("No URL, I'M REDUX")
-      this.getOrgsRedux()}
+    else {
+      console.log("No URL, I'M REDUX")
+      this.getOrgsRedux()
+    }
   }
 
   // get all possible segments{
@@ -155,9 +154,8 @@ class MemberGrid extends React.Component {
  * GEt Organizations by ChallengesTag
  */
   getOrgByChallenge = (check) => {
-    //coolection where
+
     const tempArr = []
-    console.log("From Challenge")
     db.collection("catalog_organisation").get()
       .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
@@ -166,8 +164,6 @@ class MemberGrid extends React.Component {
             let arr = doc.data().categories.challenges
             if (arr.includes(check)) {
               tempArr.push(doc.data())
-              console.log("I have  Challenge")
-              console.log(doc.data())
             }
             else { console.log("Niente") }
           }
@@ -186,8 +182,6 @@ class MemberGrid extends React.Component {
         console.log("Error getting documents: ", error);
       });
   }
-
-
 
   /**
    * GEt All Orgs in case of User case of using member-profile URL
@@ -253,8 +247,8 @@ class MemberGrid extends React.Component {
   }
 
   render() {
-      console.log("when")
-      console.log(this.props.members)
+    console.log("when")
+    console.log(this.props.members)
     const { classes, members, } = this.props;
     const imageClasses = classNames(
       classes.imgRaised,

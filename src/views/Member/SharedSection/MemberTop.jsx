@@ -14,11 +14,12 @@ import headersStyle from "assets/jss/material-kit-pro-react/views/sectionsSectio
 import MemberTopMenu from "views/Member/SharedSection/MemberTopMenu.jsx";
 import MemberTypeStat from "views/Member/SharedSection/MemberTypeStat.jsx";
 
-import bgImg from "assets/img/bg12.jpg";
+import bgImgOriginal from "assets/img/bg12.jpg";
 
 function MemberTop({ ...props }) {
-   const { classes} = props;
-
+  const { classes } = props;
+  // If there is a custom background Image, use it else use default
+  const bgImg = (props.bgImg) ? props.bgImg : bgImgOriginal
   return (
     <div>
       {/* HEADER 1 START */}

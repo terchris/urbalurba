@@ -47,8 +47,8 @@ class MemberLandingPage extends React.Component {
         const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
         return (
             <div>
-                <MemberTop />
-                <MemberGrid organization={orgType} segmentTag={segmentTag} challengesTag={challengesTag} sdgTag={sdgTag} />
+                <MemberTop bgImg={orgType.images} />
+                <MemberGrid organization={orgType.name} segmentTag={segmentTag} challengesTag={challengesTag} sdgTag={sdgTag} />
                 <MemberFooter />
             </div>
         );

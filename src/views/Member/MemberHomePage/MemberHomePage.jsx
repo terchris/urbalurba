@@ -96,7 +96,7 @@ class MemberHomePage extends React.Component {
         tempArr.forEach(type => {
           let obj = {
             name: type.idName,
-            images: type.image
+            images: "http://bucket.urbalurba.com/logo/obos.jpg"
           }
           organizationTypes.push(obj)
         })
@@ -178,9 +178,8 @@ class MemberHomePage extends React.Component {
             <GridContainer>
               {this.state.orgTypes.map((CurrentMember) => (
                 <MemberCard
-                orgTypeImage={CurrentMember.images}
                   key={CurrentMember.name}
-                  orgType={CurrentMember.name} />
+                  orgType={CurrentMember} />
 
               ))}
             </GridContainer>
