@@ -28,9 +28,11 @@ function MemberTeamSection({ ...props }) {
               <GridItem xs={12} sm={3} md={3}>
                 <Card profile plain>
                   <CardAvatar profile plain>
+                  {(CurrentContact.picture) ?
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <img src={CurrentContact.picture} alt="picture" className={classes.img} />
                     </a>
+                  : null}  
                   </CardAvatar>
                   <CardBody>
                     <h4 className={classes.cardTitle}>{CurrentContact.name}</h4>
@@ -41,58 +43,68 @@ function MemberTeamSection({ ...props }) {
                     </Muted>
                   </CardBody>
                   <CardFooter profile className={classes.justifyContent}>
-                    <Button
-                      href="#pablo"
-                      justIcon
-                      simple
-                      color="twitter"
-                      className={classes.btn}
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fas fa-phone" />
-                    </Button>
-                    <Button
-                      href="#pablo"
-                      justIcon
-                      simple
-                      color="twitter"
-                      className={classes.btn}
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="far fa-envelope" />
-                    </Button>
+                    {(CurrentContact.mobile) ?
+                      <Button
+                        href="#pablo"
+                        justIcon
+                        simple
+                        color="twitter"
+                        className={classes.btn}
+                        onClick={e => e.preventDefault()}
+                      >
+                        <i className="fas fa-phone" />
+                      </Button>
+                      : null}
 
-                    <Button
-                      href={CurrentContact.twitter}
-                      justIcon
-                      simple
-                      color="twitter"
-                      className={classes.btn}
-                      target="_blank"
-                    >
-                      <i className="fab fa-twitter" />
-                    </Button>
-                    <Button
-                      href={CurrentContact.linkedin}
-                      justIcon
-                      simple
-                      color="linkedin"
-                      className={classes.btn}
-                      target="_blank"
-                    >
-                      <i className="fab fa-linkedin" />
-                    </Button>
-                    <Button
-                      href={CurrentContact.facebook}
-                      justIcon
-                      simple
-                      color="facebook"
-                      className={classes.btn}
-                      target="_blank"
-                    >
-                      <i className="fab fa-facebook" />
-                    </Button>
+                    {(CurrentContact.mobile) ?
+                      <Button
+                        href="#pablo"
+                        justIcon
+                        simple
+                        color="twitter"
+                        className={classes.btn}
+                        onClick={e => e.preventDefault()}
+                      >
+                        <i className="far fa-envelope" />
+                      </Button>
+                      : null}
 
+                    {(CurrentContact.twitter) ?
+                      <Button
+                        href={CurrentContact.twitter}
+                        justIcon
+                        simple
+                        color="twitter"
+                        className={classes.btn}
+                        target="_blank"
+                      >
+                        <i className="fab fa-twitter" />
+                      </Button>
+                      : null}
+                    {(CurrentContact.linkedin) ?
+                      <Button
+                        href={CurrentContact.linkedin}
+                        justIcon
+                        simple
+                        color="linkedin"
+                        className={classes.btn}
+                        target="_blank"
+                      >
+                        <i className="fab fa-linkedin" />
+                      </Button>
+                      : null}
+                    {(CurrentContact.facebook) ?
+                      <Button
+                        href={CurrentContact.facebook}
+                        justIcon
+                        simple
+                        color="facebook"
+                        className={classes.btn}
+                        target="_blank"
+                      >
+                        <i className="fab fa-facebook" />
+                      </Button>
+                      : null}
                   </CardFooter>
                 </Card>
               </GridItem>
