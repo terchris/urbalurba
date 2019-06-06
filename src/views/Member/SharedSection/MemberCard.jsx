@@ -27,7 +27,9 @@ class MemberCard extends React.Component {
       classes.imgFluid
     );
     const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-    const { members, orgMembers, orgType, orgCount, image } = this.props;
+    const { members, orgMembers, orgType, orgTypeImage } = this.props;
+
+    let image=(orgTypeImage)?orgTypeImage.medium:members.image.medium
     return (
       <GridItem xs={12} sm={4} md={4}>
         <Card profile>
@@ -35,7 +37,7 @@ class MemberCard extends React.Component {
             <a href="#pablo" onClick={e => e.preventDefault()}>
               <img src={image} alt="logo" />
               <div className={classes.cardTitleAbsolute}>
-                {(orgMembers) ? members.displayName : orgCount + " Of " + orgType}
+                {(orgMembers) ? members.displayName : orgType}
               </div>
             </a>
             <div
