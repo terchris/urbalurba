@@ -44,16 +44,15 @@ class MemberGrid extends React.Component {
     let member = this.state.members
 
     // CHeck how User gets to MemberLanding and call the right function
-    // if (segmentTag) {
-    //   console.log("Segment User case")
-    //   console.log(segmentTag)
-    //   this.getOrgBySegment(segmentTag)
+    if (segmentTag) {
+      console.log("Segment User case")
+      console.log(segmentTag)
+      this.getOrgBySegment(segmentTag)
+    }
+    // else if (challengesTag) {
+    //   this.getOrgByChallenge(challengesTag)
     // }
-    // // else if (challengesTag) {
-    // //   this.getOrgByChallenge(challengesTag)
-    // // }
-    // else 
-    if(member.length==0){
+    else if(member.length==0){
       console.log("URL User case")
         this.getUrlMembers()
     }
