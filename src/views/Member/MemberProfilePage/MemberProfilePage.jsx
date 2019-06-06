@@ -49,22 +49,26 @@ class MemberProfilePage extends React.Component {
    componentDidMount() {
     // this.getSegmentOrChallenge()
     //urlOrg is when an Organisation is searched by writing it straight as part of URL
+    const noUrlOrg = this.props.location.state
+    console.log("What is this, ",noUrlOrg)
     const urlOrg = this.props.match.params.urlOrg
+   
 
     // Check whether user is coming from just short URL with 
     //company name or through the HomePage
-    if(urlOrg)
-    { 
-      this.getSingleOrganization(urlOrg)
-    }
-    else
-    {
+    if(noUrlOrg)
+    {console.log(" No URL User case")
       this.setState({
+        
         organization:this.props.location.state.item,
         orgLoading:false
       })
     }
-
+    else{ 
+      console.log("URL User case")
+      this.getSingleOrganization(urlOrg)
+    }
+  
    window.scrollTo(0, 0);
     document.body.scrollTop = 0;
   }
@@ -91,7 +95,7 @@ class MemberProfilePage extends React.Component {
 
 
   render() {
-
+    console.log("Profile")
     const { classes, ...rest } = this.props;
     const imageClasses = classNames(
       classes.imgRaised,
@@ -215,8 +219,8 @@ const mapDispatchToProps = dispatch => {
 //properties of this Component
 const mapStateToProps = (state, ownProps) => {
   
-  console.log("lets see Redux");
-   console.log(state.members);
+  // console.log("lets see Redux");
+  //  console.log(state.members);
   return {
     members:state.members
   }

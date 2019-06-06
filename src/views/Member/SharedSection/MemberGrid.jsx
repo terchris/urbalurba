@@ -36,26 +36,33 @@ class MemberGrid extends React.Component {
       //searched
     }
   }
+
   componentDidMount() {
     let segmentTag = this.state.segmentTag
     let challengesTag = this.props.challengesTag
     let sdgTag = this.props.sdgTag
-    let member = this.state.member
-    
-    if (segmentTag) {
-      this.getOrgBySegment(segmentTag)
-    }
-    else if (challengesTag) {
-      this.getOrgByChallenge(challengesTag)
-    }
-    else if(!member){
-        this.getMembersFirebase()
-    }
-    else {
-      this.getOrgs()
-    }
-    //this.getArraySeg()
+    let member = this.state.members
 
+    // CHeck how User gets to MemberLanding and call the right function
+    // if (segmentTag) {
+    //   console.log("Segment User case")
+    //   console.log(segmentTag)
+    //   this.getOrgBySegment(segmentTag)
+    // }
+    // // else if (challengesTag) {
+    // //   this.getOrgByChallenge(challengesTag)
+    // // }
+    // else 
+    if(member.length==0){
+      console.log("URL User case")
+        this.getUrlMembers()
+    }
+    // else {
+    //   this.getOrgs()
+    // }
+    // //this.getArraySeg()
+    else{ console.log("No URL, I'M REDUX")
+      this.getOrgsRedux()}
   }
 
   // get all possible segments{
@@ -108,10 +115,11 @@ class MemberGrid extends React.Component {
   /**
    * GEt Organizations by SegmentTag
    */
-    getOrgBySegment = (check) => {
+  getOrgBySegment = (check) => {
     //coolection where
     const tempArr = []
-    console.log("From Challenge")
+    console.log("From Segment")
+    console.log("This is the check: ", check)
     db.collection("catalog_organisation").get()
       .then(function (querySnapshot) {
         querySnapshot.forEach(function (doc) {
@@ -120,6 +128,9 @@ class MemberGrid extends React.Component {
             let arr = doc.data().categories.segment
             if (arr.includes(check)) {
               tempArr.push(doc.data())
+              console.log("I have  Segment")
+              console.log(doc.data())
+
             }
             else { console.log("Niente") }
           }
@@ -139,9 +150,9 @@ class MemberGrid extends React.Component {
       });
   }
 
-    /**
-   * GEt Organizations by ChallengesTag
-   */
+  /**
+ * GEt Organizations by ChallengesTag
+ */
   getOrgByChallenge = (check) => {
     //coolection where
     const tempArr = []
@@ -175,50 +186,50 @@ class MemberGrid extends React.Component {
 
 
 
-/**
- * GEt All Orgs in case of User case of using member-profile URL
- */
-  getMembersFirebase = () => {
-   // const db = fire.firestore();
-    let organization=[];
-    let orgArray=[];
-    let orgTypeArr=[]
-   
-    
-    db.collection('catalog_organisation').get()
-    .then((snapshot) => {       
-      snapshot.forEach((doc) => {
-        // Ebe. Here is the data. How to get it into the right structure I leave to you 
-      
-        organization.push(doc.data())
-        //Get all organizationType from Firebase Organizations
-  
-        //Terje. this would be best if it returned just a string instead of an array,
-        // Perhaps we could look into it. I'm not sure how much time that will take
-        if(doc.data().categories.organizationType){
-          orgArray.push(doc.data().categories.organizationType)
-        }
-      });
-      
-      // send organizations to Global State(Redux)
-      this.props.getMembers(organization);
-  
-     // let orgTypes=this.getCatCount(orgArray);
-  
-      this.setState({
-        organs: organization,
-        isLoading: false,
-        orgsDisplayed: organization,
-  
-      })
-    })
-    .catch((err) => {
-      console.log('Error getting documents', err);
-    });
-  }
-  
+  /**
+   * GEt All Orgs in case of User case of using member-profile URL
+   */
+  getUrlMembers = () => {
+    // const db = fire.firestore();
+    let organization = [];
+    let orgArray = [];
+    let orgTypeArr = []
 
-  getOrgs = () => {
+
+    db.collection('catalog_organisation').get()
+      .then((snapshot) => {
+        snapshot.forEach((doc) => {
+          // Ebe. Here is the data. How to get it into the right structure I leave to you 
+
+          organization.push(doc.data())
+          //Get all organizationType from Firebase Organizations
+
+          //Terje. this would be best if it returned just a string instead of an array,
+          // Perhaps we could look into it. I'm not sure how much time that will take
+          if (doc.data().categories.organizationType) {
+            orgArray.push(doc.data().categories.organizationType)
+          }
+        });
+
+        // send organizations to Global State(Redux)
+        this.props.getMembers(organization);
+
+        // let orgTypes=this.getCatCount(orgArray);
+
+        this.setState({
+          organs: organization,
+          isLoading: false,
+          orgsDisplayed: organization,
+
+        })
+      })
+      .catch((err) => {
+        console.log('Error getting documents', err);
+      });
+  }
+
+
+  getOrgsRedux = () => {
     let members = this.state.members;
     let orgType = this.state.filterItem
     let filteredOrg = members.filter((org) => {
@@ -239,6 +250,8 @@ class MemberGrid extends React.Component {
   }
 
   render() {
+      console.log("when")
+      console.log(this.props.members)
     const { classes, members, } = this.props;
     const imageClasses = classNames(
       classes.imgRaised,
