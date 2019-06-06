@@ -49,9 +49,11 @@ class MemberGrid extends React.Component {
       console.log(segmentTag)
       this.getOrgBySegment(segmentTag)
     }
-    // else if (challengesTag) {
-    //   this.getOrgByChallenge(challengesTag)
-    // }
+    else if (challengesTag) {
+      console.log("Challenges User case")
+      console.log(challengesTag)
+      this.getOrgByChallenge(challengesTag)
+    }
     else if(member.length==0){
       console.log("URL User case")
         this.getUrlMembers()
@@ -164,11 +166,13 @@ class MemberGrid extends React.Component {
             let arr = doc.data().categories.challenges
             if (arr.includes(check)) {
               tempArr.push(doc.data())
+              console.log("I have  Challenge")
+              console.log(doc.data())
             }
             else { console.log("Niente") }
           }
 
-          else { console.log("No Segment For", doc.data().displayName) }
+          else { console.log("No challenges For", doc.data().displayName) }
         });
 
       }).then(() => {
