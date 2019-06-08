@@ -7,6 +7,8 @@ import withStyles from "@material-ui/core/styles/withStyles";
 
 // core components
 import GridContainer from "components/Grid/GridContainer.jsx";
+import Badge from "components/Badge/Badge.jsx";
+
 
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
@@ -27,12 +29,12 @@ class MemberGrid extends React.Component {
       isLoading: true,
       searchString: '',
       members: this.props.members,
-      organs: [],
+      organizationPool: [],
       orgsDisplayed: [],
       filterItem: this.props.organization,
       segmentTag: this.props.segmentTag,
       challengesTag: this.props.challengesTag,
-      sdgTag: this.props.sdgTag
+      sdgTag: this.props.sdgTag,
       //searched
     }
   }
@@ -42,6 +44,7 @@ class MemberGrid extends React.Component {
     let challengesTag = this.props.challengesTag
     let sdgTag = this.props.sdgTag
     let member = this.state.members
+    
 
     // CHeck how User gets to MemberLanding and call the right function
     if (segmentTag) {
@@ -70,7 +73,7 @@ class MemberGrid extends React.Component {
 
   getArraySeg = () => {
 
-    let org = this.state.members
+    let org = this.state.organizationPool
     let segArr = [];
     let segSet = new Set();
     for (let n = 0; n < org.length; n++) {
@@ -85,17 +88,20 @@ class MemberGrid extends React.Component {
       segment => {
         let colornumber = Math.floor((Math.random() * 100000) + 100000);
         return (
-          <span onClick={this.getSegment} style={{ backgroundColor: "#" + colornumber }}>{segment}</span>
+          <Badge color="primary" onClick={this.getSegment} >{segment}</Badge>
         );
       }
     )
 
     return segToMap
   }
-  // final segment should be a set of all segment types available
-
+ 
+/**
+ * This is used in conjunction with getArraySeg() to provide 
+ * the optional filter by Segment
+ */
   getSegment = (event) => {
-    let members = this.state.organs;
+    let members = this.state.organizationPool;
     let segment = event.target.textContent
     let segmentOrgs = members.filter((org) => {
 
@@ -142,6 +148,7 @@ class MemberGrid extends React.Component {
         this.setState({
           isLoading: false,
           orgsDisplayed: tempArr,
+          organizationPool:tempArr,
 
         })
       })
@@ -175,6 +182,7 @@ class MemberGrid extends React.Component {
         this.setState({
           isLoading: false,
           orgsDisplayed: tempArr,
+          organizationPool : tempArr,
 
         })
       })
@@ -214,7 +222,7 @@ class MemberGrid extends React.Component {
         // let orgTypes=this.getCatCount(orgArray);
 
         this.setState({
-          organs: organization,
+          organizationPool: organization,
           isLoading: false,
           orgsDisplayed: organization,
 
@@ -237,7 +245,7 @@ class MemberGrid extends React.Component {
     })
 
     this.setState({
-      organs: filteredOrg,
+      organizationPool: filteredOrg,
       isLoading: false,
       orgsDisplayed: filteredOrg,
 
