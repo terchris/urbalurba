@@ -44,7 +44,7 @@ class MemberGrid extends React.Component {
     let challengesTag = this.props.challengesTag
     let sdgTag = this.props.sdgTag
     let member = this.state.members
-    
+
 
     // CHeck how User gets to MemberLanding and call the right function
     if (segmentTag) {
@@ -72,7 +72,6 @@ class MemberGrid extends React.Component {
   //   going through each org and getting all elements in segment array
 
   getArraySeg = () => {
-
     let org = this.state.organizationPool
     let segArr = [];
     let segSet = new Set();
@@ -88,18 +87,22 @@ class MemberGrid extends React.Component {
       segment => {
         let colornumber = Math.floor((Math.random() * 100000) + 100000);
         return (
-          <Badge color="primary" onClick={this.getSegment} >{segment}</Badge>
+
+
+          <Badge color="primary"  >
+            <p onClick={(e) => { this.getSegment(e) }}>{segment}</p>
+          </Badge>
         );
       }
     )
 
     return segToMap
   }
- 
-/**
- * This is used in conjunction with getArraySeg() to provide 
- * the optional filter by Segment
- */
+
+  /**
+   * This is used in conjunction with getArraySeg() to provide 
+   * the optional filter by Segment
+   */
   getSegment = (event) => {
     let members = this.state.organizationPool;
     let segment = event.target.textContent
@@ -148,7 +151,7 @@ class MemberGrid extends React.Component {
         this.setState({
           isLoading: false,
           orgsDisplayed: tempArr,
-          organizationPool:tempArr,
+          organizationPool: tempArr,
 
         })
       })
@@ -182,7 +185,7 @@ class MemberGrid extends React.Component {
         this.setState({
           isLoading: false,
           orgsDisplayed: tempArr,
-          organizationPool : tempArr,
+          organizationPool: tempArr,
 
         })
       })
@@ -233,7 +236,6 @@ class MemberGrid extends React.Component {
       });
   }
 
-
   getOrgsRedux = () => {
     let members = this.state.members;
     let orgType = this.state.filterItem
@@ -272,7 +274,7 @@ class MemberGrid extends React.Component {
             <div className={classes.title}>
               <h3>Member search</h3>
               <div className="segments">
-
+                <p>SegmentGroups :</p>
                 {this.getArraySeg()}
               </div>
             </div>
