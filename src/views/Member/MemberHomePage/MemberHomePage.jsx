@@ -96,7 +96,7 @@ class MemberHomePage extends React.Component {
         tempArr.forEach(type => {
           let obj = {
             name: type.idName,
-            images: "http://bucket.urbalurba.com/logo/obos.jpg"
+            images: type.image.medium
           }
           organizationTypes.push(obj)
         })

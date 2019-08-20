@@ -41,7 +41,10 @@ function MemberTop({ ...props }) {
 
     const XbackgroundColor= {
         height: "80vh",
-        background: "#DD1367"
+        background: "#DD1367",
+        "&:before": {
+            background: "rgb(221, 19, 103, 0.5)"
+          }
     };
     const myPageHeader =  {
         position: "relative",
