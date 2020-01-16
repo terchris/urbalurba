@@ -24,13 +24,29 @@ class MemberTagsSection extends React.Component {
             classes.imgFluid
         );
         const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-        const { member: member } = this.props;
+        const { member } = this.props;
 
         return (
             <GridContainer>
                 <GridItem>
                     <h4 className={classes.title}>Tags</h4>
                     {member.categories.tags}
+                    <hr />
+                    <h4 className={classes.title}>Type</h4>
+                    {member.categories.type && member.categories.type.map(CurrentTag => (
+                        <Link to={{
+                            pathname: "/member-landing",
+                            state: {
+                                segmentTag: CurrentTag
+                            }
+                        }}>
+                            <Badge
+                                color="primary">
+                                {CurrentTag}
+                            </Badge>
+                        </Link>
+                    ))}
+
                     <hr />
                     <h4 className={classes.title}>Segment</h4>
                     {member.categories.segment && member.categories.segment.map(CurrentTag => (
@@ -49,7 +65,7 @@ class MemberTagsSection extends React.Component {
 
 
                     <hr />
-                    <h4 className={classes.title}>Solving these problems</h4>
+                    <h4 className={classes.title}>Targeting challenges</h4>
                     {member.categories.challenges && member.categories.challenges.map(CurrentTag => (
 
                         <Link to={{

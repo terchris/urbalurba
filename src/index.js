@@ -24,6 +24,7 @@ import SignupPage from "views/SignupPage/SignupPage.jsx";
 import ErrorPage from "views/ErrorPage/ErrorPage.jsx";
 import MainPage from "views/Feilmeld/MainPage/MainPage.jsx";
 import MemberProfilePage from "views/Member/MemberProfilePage/MemberProfilePage.jsx";
+import MemberEntryPage from "views/Member/MemberEntryPage/MemberEntryPage.jsx";
 import MemberLandingPage from "views/Member/MemberLandingPage/MemberLandingPage.jsx";
 import { Provider } from 'react-redux'
 import { createStore, } from 'redux'
@@ -63,6 +64,7 @@ ReactDOM.render(
           <Route path="/feilmeld" component={MainPage} />
           <Route path="/org/orgName" component={MemberProfilePage} />
           <Route path="/org/:urlOrg" component={MemberProfilePage} />
+          <Route path="/entry/:urlEntry" component={MemberEntryPage} />
           <Route path="/member-landing" component={MemberLandingPage} />
           <Route path="/member-home" component={MemberHomePage} />
           <Route path="/member-home2" component={MemberHomePage2} />
