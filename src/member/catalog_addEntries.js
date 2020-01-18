@@ -24,7 +24,8 @@ var categoryRef = db.collection("catalog_entry");
 
 categoryRef.doc().set(
     {
-        "idName": "elektrisk-passasjerferge",        
+        "idName": "elektrisk-passasjerferge",     
+        "entryType": "solution",           
         "displayName": "Elektrisk passasjerferge",
         "slogan": "Verdens første elektriske passasjerskip",
         "summary": "Høsten 2019 ble fergen Go'Vakker Elen satt i drift i Fredrikstad. Fergen er en av de første i sitt slag i verden. Den er 100% elektrisk og lades med induksjon mens den ligger til kai.",
@@ -35,7 +36,6 @@ categoryRef.doc().set(
             "medium": "http://bucket.urbalurba.com/entry/fredrikstad-kommune/elen.png",
             "small": ""
         },
-        "status": "Ongoing",
         "location": {
             "shippingAddress": "Rådhuset, Nygaardsgaten 14-16, 1606 Fredrikstad, Norway",
             "gps": {
@@ -43,11 +43,25 @@ categoryRef.doc().set(
                 "_longitude": 0
             }
         },
-        "startDate": "43709",
-        "finishDate": "",
-
+        "entryStatus": {
+            "status": "Ongoing",
+            "summary": "I drift siden høsten 2019. Flere avganger daglig",
+            "startDate": "2019-03-13",
+            "finishDate": ""
+        },
+        "values": [
+            {
+                "valueType": "Expected",
+                "summary": "Denne elektriske fergen bidrar til at innbyggerne har et miljøvennlig alternativ til transport, den bidrar til mindre støy, og den sparer kommunen for penger.Vi regner med at driftskostnadene blir inntil 80% mindre enn for de gamle dieseldrevne fergene.Denne ene fergen alene er beregnet til å spare 250.000 kroner i diesel, og 50.000 kroner i driftsutgifter årlig.",
+                "valueDate" :"2019-01-01"
+            },
+            {
+                "valueType": "Measured",
+                "summary": "Ikke utført enda",
+                "valueDate" :"2020-01-01"
+            }
+        ],
         "categories": {
-            "type": ["Solution"],
             "tags": "transport, offentlig transport, ferge, fergetransport, elektrisk ferge, induktiv lading",
             "SDG": [
                 "11",
@@ -67,11 +81,12 @@ categoryRef.doc().set(
                 "Reducing Operation Costs"
             ]
         },
-        "ownerOrg":
+        "parent":
         {
+            "entryType": "org", 
+            "idName": "fredrikstad-kommune",
             "displayName": "Fredrikstad kommune",
             "insightly_id": "90707163",
-            "idName": "fredrikstad-kommune",
             "phone": "69 30 60 00",
             "image": {
                 "large": "",
@@ -116,8 +131,6 @@ categoryRef.doc().set(
         ],
         "foreignKeys":
         {
-            "orgIdName": "fredrikstad-kommune",
-            "insightly_id": "95288967",
             "form": {
                 "formSystem": "cognitoforms",
                 "formID": "ProjectRegistration_Id",

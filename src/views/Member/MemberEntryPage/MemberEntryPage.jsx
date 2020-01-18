@@ -20,9 +20,13 @@ import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 import SDGGrid from "../SharedSection/SDGGrid";
 import MemberFooter from "../SharedSection/MemberFooter.jsx";
 
-import MemberTeamSection from "./Sections/MemberTeamSection.jsx";
+import EntryContactsSection from "./Sections/EntryContactsSection.jsx";
 import MemberHeaderSection from "./Sections/MemberHeaderSection.jsx";
-import MemberTagsSection from "./Sections/MemberTagsSection.jsx";
+import EntryCategoriesSection from "./Sections/EntryCategoriesSection.jsx";
+import EntryStatusSection from "./Sections/EntryStatusSection.jsx";
+import EntryValuesSection from "./Sections/EntryValuesSection.jsx";
+
+
 import MemberBlogSection from "./Sections/MemberBlogSection.jsx";
 import MemberSolutionSection from "./Sections/MemberSolutionSection.jsx";
 import MemberSummarySection from "./Sections/MemberSummarySection.jsx";
@@ -135,19 +139,23 @@ class MemberEntryPage extends React.Component {
                   <p>
                     {entry.description}
                   </p>
-                </div>                
-                <MemberTeamSection member={entry} />
+                </div>           
+                <EntryValuesSection values={entry.values} />      
+                <EntryStatusSection entryStatus={entry.entryStatus} />      
+                
+                <EntryContactsSection contacts={entry.contacts} />
+                
               </GridItem>
 
 
               <GridItem xs={12} sm={12} md={2}>
-                <MemberTagsSection member={entry} /> 
+                <EntryCategoriesSection categories={entry.categories} /> 
               </GridItem>
             </GridContainer> 
 
 
 
-             <MemberFooterSection member={entry.ownerOrg} /> 
+             <MemberFooterSection member={entry.parent} /> 
             <Clearfix />
           </div>
         </div>);

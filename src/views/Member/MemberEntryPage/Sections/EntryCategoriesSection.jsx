@@ -16,7 +16,7 @@ import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
 
 import { Link } from "react-router-dom";
 
-class MemberTagsSection extends React.Component {
+class EntryCategoriesSection extends React.Component {
     render() {
         const { classes, ...rest } = this.props;
         const imageClasses = classNames(
@@ -24,32 +24,18 @@ class MemberTagsSection extends React.Component {
             classes.imgFluid
         );
         const navImageClasses = classNames(classes.imgRounded, classes.imgGallery);
-        const { member } = this.props;
+        const { categories } = this.props;
 
         return (
             <GridContainer>
+
                 <GridItem>
                     <h4 className={classes.title}>Tags</h4>
-                    {member.categories.tags}
+                    {categories.tags}
                     <hr />
-                    <h4 className={classes.title}>Type</h4>
-                    {member.categories.type && member.categories.type.map(CurrentTag => (
-                        <Link to={{
-                            pathname: "/member-landing",
-                            state: {
-                                segmentTag: CurrentTag
-                            }
-                        }}>
-                            <Badge
-                                color="primary">
-                                {CurrentTag}
-                            </Badge>
-                        </Link>
-                    ))}
 
-                    <hr />
                     <h4 className={classes.title}>Segment</h4>
-                    {member.categories.segment && member.categories.segment.map(CurrentTag => (
+                    {categories.segment && categories.segment.map(CurrentTag => (
                         <Link to={{
                             pathname: "/member-landing",
                             state: {
@@ -66,7 +52,7 @@ class MemberTagsSection extends React.Component {
 
                     <hr />
                     <h4 className={classes.title}>Targeting challenges</h4>
-                    {member.categories.challenges && member.categories.challenges.map(CurrentTag => (
+                    {categories.challenges && categories.challenges.map(CurrentTag => (
 
                         <Link to={{
                             pathname: "/member-landing",
@@ -86,4 +72,4 @@ class MemberTagsSection extends React.Component {
         );
     }
 }
-export default withStyles(memberPageStyle)(MemberTagsSection);
+export default withStyles(memberPageStyle)(EntryCategoriesSection);

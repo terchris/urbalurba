@@ -15,15 +15,15 @@ import teamsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections
 
 
 
-function MemberTeamSection({ ...props }) {
-  const { classes, member, ...rest } = props;
+function EntryContactsSection({ ...props }) {
+  const { classes, contacts, ...rest } = props;
 
   return (
     <div className="cd-section" {...rest}>
       <div className={classes.team}>
         <div className={classes.container}>
           <GridContainer>
-            {member.contacts && member.contacts.map(CurrentContact => (
+            {contacts && contacts.map(CurrentContact => (
 
               <GridItem xs={12} sm={3} md={3}>
                 <Card profile plain>
@@ -43,18 +43,18 @@ function MemberTeamSection({ ...props }) {
                     </Muted>
 
                     {(CurrentContact.displayName) ?
-                    <Muted>
-                      <h6 className={classes.cardCategory}>
-                        {CurrentContact.displayName}
-                      </h6>
+                      <Muted>
+                        <h6 className={classes.cardCategory}>
+                          {CurrentContact.displayName}
+                        </h6>
                       </Muted>
                       : null}
 
                     {(CurrentContact.orgDepartment) ?
-                    <Muted>
-                      <h6 className={classes.cardCategory}>
-                        {CurrentContact.orgDepartment}
-                      </h6>
+                      <Muted>
+                        <h6 className={classes.cardCategory}>
+                          {CurrentContact.orgDepartment}
+                        </h6>
                       </Muted>
                       : null}
 
@@ -136,4 +136,4 @@ function MemberTeamSection({ ...props }) {
   );
 }
 
-export default withStyles(teamsStyle)(MemberTeamSection);
+export default withStyles(teamsStyle)(EntryContactsSection);
