@@ -7,12 +7,13 @@ import GridContainer from "components/Grid/GridContainer.jsx";
 import GridItem from "components/Grid/GridItem.jsx";
 import Card from "components/Card/Card.jsx";
 import CardAvatar from "components/Card/CardAvatar.jsx";
+import CardHeader from "components/Card/CardHeader.jsx";
 import CardBody from "components/Card/CardBody.jsx";
 import CardFooter from "components/Card/CardFooter.jsx";
 import Button from "components/CustomButtons/Button.jsx";
 import Muted from "components/Typography/Muted.jsx";
 import teamsStyle from "assets/jss/material-kit-pro-react/views/sectionsSections/teamsStyle.jsx";
-
+import styles from "assets/jss/material-kit-pro-react/views/componentsSections/sectionCards.jsx";
 
 
 function EntryContactsSection({ ...props }) {
@@ -26,7 +27,8 @@ function EntryContactsSection({ ...props }) {
             {contacts && contacts.map(CurrentContact => (
 
               <GridItem xs={12} sm={3} md={3}>
-                <Card profile plain>
+                <Card profile>
+                  
                   <CardAvatar profile plain>
                     {(CurrentContact.picture) ?
                       <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -34,6 +36,23 @@ function EntryContactsSection({ ...props }) {
                       </a>
                       : null}
                   </CardAvatar>
+
+{/*
+                      <CardHeader image>
+                        <a href="#pablo" onClick={e => e.preventDefault()}>
+                          <img src={CurrentContact.picture} alt="..." />
+                        </a>
+                        <div
+                          className={classes.coloredShadow}
+                          style={{
+                            backgroundImage: `url(${CurrentContact.picture})`,
+                            opacity: "1"
+                          }}
+                        />
+                      </CardHeader>
+*/}
+
+
                   <CardBody>
                     <h4 className={classes.cardTitle}>{CurrentContact.name}</h4>
                     <Muted>
@@ -42,18 +61,18 @@ function EntryContactsSection({ ...props }) {
                       </h6>
                     </Muted>
 
-                    {(CurrentContact.displayName) ?
-                      <Muted>
-                        <h6 className={classes.cardCategory}>
-                          {CurrentContact.displayName}
-                        </h6>
-                      </Muted>
-                      : null}
-
                     {(CurrentContact.orgDepartment) ?
                       <Muted>
                         <h6 className={classes.cardCategory}>
                           {CurrentContact.orgDepartment}
+                        </h6>
+                      </Muted>
+                      : null}
+
+                    {(CurrentContact.displayName) ?
+                      <Muted>
+                        <h6 className={classes.cardCategory}>
+                          {CurrentContact.displayName}
                         </h6>
                       </Muted>
                       : null}
@@ -124,6 +143,19 @@ function EntryContactsSection({ ...props }) {
                         <i className="fab fa-facebook" />
                       </Button>
                       : null}
+                    {(CurrentContact.personUrl) ?
+                      <Button
+                        href={CurrentContact.personUrl}
+                        justIcon
+                        simple
+                        color="facebook"
+                        className={classes.btn}
+                        target="_blank"
+                      > 
+                        <i className="fas fa-link" />
+                      </Button>
+                      : null}
+
                   </CardFooter>
                 </Card>
               </GridItem>

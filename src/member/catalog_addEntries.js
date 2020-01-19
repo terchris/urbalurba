@@ -61,6 +61,47 @@ categoryRef.doc().set(
                 "valueDate" :"2020-01-01"
             }
         ],
+        "resources": [
+            {
+                "urlType": "Presse",
+                "url": "https://www.f-b.no/nyheter/ferger/el-ferge/glad-for-gratis-ferge-da-kan-du-takke-alle-som-betaler-for-parkering/s/5-59-1640699",
+                "displayName" :"Fredriksstad Blad - Glad for gratis ferge? Da kan du takke alle som betaler for parkering",
+                "summary": "Oppslag  i lokalavisen om fergen"
+            },
+            {
+                "urlType": "Presse",
+                "url": "https://www.youtube.com/watch?v=GIwiVuNenZI",
+                "displayName" :"Verdens første hurtiggående elektriske ferge på Østfoldbesøk",
+                "summary": "Verdens første, hurtiggående elektriske passasjerferge var fredag i Fredrikstad på demonstrasjonstur."
+            },
+            {
+                "urlType": "Bilder",
+                "url": "https://images.app.goo.gl/vEnmT43dndbgezBU7",
+                "displayName" :"Bilder av fergen fra google",
+                "summary": "Samling av bilder av fergen hos google. Lett å finne mange bilder"
+            },
+            {
+                "urlType": "Dokumentasjon",
+                "url": "https://www.fredrikstad.kommune.no/globalassets/dokumenter/politikk-demokrati/budsjett-og-handlingsplaner/2019-2022/vedtatt-okonomiplan-2019-2022.pdf",
+                "displayName" :"Vedtatt økonomiplan for 2019 - 2022 - Fredrikstad kommune",
+                "summary": "Fergetilbudet skal opprettholdes og videreutvikles. Det legges inn investeringsmidler til ny ferge i 2021 og foretas nye vurderinger i forbindelse med handlingsplanen i desember."
+            }
+        ],
+        "sustainability": [
+            {
+                "susType": "economic",
+                "summary": "Sparer kommunen for penger. Driftskostnadene blir inntil 80% mindre enn for de gamle dieseldrevne fergene.",
+            },
+            {
+                "susType": "social",
+                "summary": "Innbyggerne har et miljøvennlig alternativ til transport",
+            },
+            {
+                "susType": "environment",
+                "summary": "Mindre forurensning og mindre støy"
+            }
+        ],
+
         "categories": {
             "tags": "transport, offentlig transport, ferge, fergetransport, elektrisk ferge, induktiv lading",
             "SDG": [
@@ -113,7 +154,7 @@ categoryRef.doc().set(
                 "name": "Frode Samuelsen",
                 "mobile": "95901107",
                 "email": "frosam@fredrikstad.kommune.no",
-                "url": "https://www.fredrikstad.kommune.no/"
+                "personUrl": "https://www.fredrikstad.kommune.no/"
             },
             {
                 "contactRoles": [
@@ -126,7 +167,12 @@ categoryRef.doc().set(
                 "name": "Gard Jenssen",
                 "mobile": "90087378",
                 "email": "garjen@fredrikstad.kommune.no",
-                "url": "https://www.fredrikstad.kommune.no/"
+                "personUrl": "https://www.smartfredrikstad.no/hei-fredrikstad-her-er-jeg/",
+                "picture": "https://s3.amazonaws.com/insightly.userfiles/720224/WODF1E/a3340164-7513-47fb-aba5-09abc37a6fac.jpeg",
+                "facebook": "https://www.facebook.com/gard.jenssen",
+                "linkedin": "https://www.linkedin.com/in/gardjenssen",
+                "twitter": "https://twitter.com/gard_jenssen"
+
             }
         ],
         "foreignKeys":

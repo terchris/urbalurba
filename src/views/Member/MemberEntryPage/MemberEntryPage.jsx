@@ -1,5 +1,7 @@
 /* eslint-disable */
 import React from "react";
+import ReactMarkdown from 'react-markdown';
+
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // @material-ui/core components
@@ -17,14 +19,19 @@ import Clearfix from "components/Clearfix/Clearfix.jsx";
 
 // App resources
 import memberPageStyle from "assets/member/jss/views/memberPageStyle.jsx";
+import landingPageStyle from "assets/jss/material-kit-pro-react/views/landingPageStyle.jsx";
 import SDGGrid from "../SharedSection/SDGGrid";
 import MemberFooter from "../SharedSection/MemberFooter.jsx";
 
 import EntryContactsSection from "./Sections/EntryContactsSection.jsx";
 import MemberHeaderSection from "./Sections/MemberHeaderSection.jsx";
+import EntryHeaderSection from "./Sections/EntryHeaderSection.jsx";
 import EntryCategoriesSection from "./Sections/EntryCategoriesSection.jsx";
 import EntryStatusSection from "./Sections/EntryStatusSection.jsx";
+import EntryResourcesSection from "./Sections/EntryResourcesSection.jsx";
+
 import EntryValuesSection from "./Sections/EntryValuesSection.jsx";
+import EntrySustainabilitySection from "./Sections/EntrySustainabilitySection.jsx";
 
 
 import MemberBlogSection from "./Sections/MemberBlogSection.jsx";
@@ -110,64 +117,56 @@ class MemberEntryPage extends React.Component {
    if (this.state.orgLoading===false){ return (
       <div>
 
-       <MemberHeaderSection />
-         <div className={classNames(classes.main, classes.mainRaised)}>
+        <EntryHeaderSection bgImg={entry.image.medium} title={entry.displayName}/>
+
+        <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
-            <GridContainer justify="center">
-              <GridItem xs={12} sm={12} md={6}>
-                <div className={classes.memberLogo}>
-                  <div>
-                    <img src={entry.image.medium} alt="logo" className={imageClasses} />
-                  </div>
-                  <div className={classes.name}>
-                    <h1 className={classes.title}>{entry.displayName}</h1>
-                    <h3>{entry.slogan}</h3>
-                  </div>
-                </div>
-              </GridItem>
-            </GridContainer>
+            <div className={classNames(classes.section)}>
 
-            <GridContainer>
-              <GridItem xs={12} sm={12} md={10}>
-                <div className={classNames(classes.section)}>
-                  <p>
+              <GridContainer justify="center">
+                <GridItem xs={12} sm={8} md={8}>
+                  <h2 className={classes.title}>{entry.slogan}</h2>
+                  <h5 className={classes.description}>
                     {entry.summary}
-                  </p>
-                </div>
-                <SDGGrid sdg={entry.categories.SDG} />
-                <div className={classNames(classes.section)}>
-                  <p>
-                    {entry.description}
-                  </p>
-                </div>           
-                <EntryValuesSection values={entry.values} />      
-                <EntryStatusSection entryStatus={entry.entryStatus} />      
-                
-                <EntryContactsSection contacts={entry.contacts} />
-                
-              </GridItem>
+                  </h5>
+                </GridItem>
+              </GridContainer>
+              <EntrySustainabilitySection sustainability={entry.sustainability} />    
 
+              <GridContainer>
+                <GridItem xs={12} sm={12} md={10}>
 
-              <GridItem xs={12} sm={12} md={2}>
-                <EntryCategoriesSection categories={entry.categories} /> 
-              </GridItem>
-            </GridContainer> 
+                  <SDGGrid sdg={entry.categories.SDG} />
+                  <div className={classNames(classes.section)}>
+                    <p>
+                    <ReactMarkdown source={entry.description} />
+                    </p>
+                  </div>           
+                  <EntryValuesSection values={entry.values} />      
+                  <GridContainer>
+                    <EntryStatusSection entryStatus={entry.entryStatus} image={entry.image.medium} title={entry.displayName} />                                                   
+                    <EntryResourcesSection entryStatus={entry.entryStatus} image={entry.image.medium} title={entry.displayName} />        
+                  </GridContainer>
+                </GridItem>
 
-
-
-             <MemberFooterSection member={entry.parent} /> 
-            <Clearfix />
+                <GridItem xs={12} sm={12} md={2}>
+                  <EntryCategoriesSection categories={entry.categories} /> 
+                </GridItem>
+              </GridContainer> 
+              <EntryContactsSection contacts={entry.contacts} />     
+              <MemberFooterSection member={entry.parent} /> 
+              <Clearfix />
+            </div>
           </div>
-        </div>);
       
-            //})}  
-            }
+        </div>
         <MemberFooter />
       </div>
 
-    );} else{
+    );} 
+    else{
       return (
-<div>Loading.......</div>
+        <div>Loading.......</div>
       );
     }
   }
@@ -196,3 +195,6 @@ export default compose(
   withStyles(memberPageStyle),
   connect(mapStateToProps,mapDispatchToProps),
 )(MemberEntryPage);
+
+
+       
