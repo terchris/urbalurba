@@ -1,6 +1,6 @@
 # Urbalurba
 ## Beskrivelse
-System for medlemskatalog
+System for medlemskatalog - react versjon. dvs bruker firebase direkte i klienten
 
 Bruker node 8.15.1
 
